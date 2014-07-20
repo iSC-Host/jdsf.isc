@@ -1,0 +1,31 @@
+/* THIS IS THE HUMANS.TXT TO SIGN THIS WEBSITE! */
+
+
+/* TEAM */
+
+/* Website, Videos, etc. */
+Author:  Suriyaa Kudo
+Site: http://suriyaa.isc
+Twitter: @SuriyaaKudoIsc
+Location: Munich (MÜ) , Bavaria (BY), Germany (DE)
+
+/* Drawing, Videos, etc. */
+Authors:  Aahash de Ruffy
+Site: http://aahash.acs.isc
+Location: Munich (MÜ) , Bavaria (BY), Germany (DE)
+
+----
+
+/* THANKS */
+
+* GitHub
+
+----
+
+/* SITE */
+
+Link: http://jacks-dogs-family.isc
+Last update: 2014/07/20
+Standards: HTML5, CSS3, JavaScript
+Components: Bootstrap, jQuery, etc.
+Software: GitHub
