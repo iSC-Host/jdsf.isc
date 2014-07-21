@@ -48,7 +48,7 @@ Also it includes this softwares for all visitors and fans:
 * [WordPress](http://wordpress.org/) (A popular blog system)
 * [MediaWiki](http://mediawiki.org/) (A popular wiki system)
 * [PHPFreeChat](http://www.phpfreechat.net/) (A popular PHP-based chat)
-* [YOURLS](http://yourls.org/)
+* [YOURLS](http://yourls.org/) (A popular (Own) URL Shortener)
 
 ## Requirements
 
