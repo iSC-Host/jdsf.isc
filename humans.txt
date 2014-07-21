@@ -26,6 +26,6 @@ Location: Munich (MÜ) , Bavaria (BY), Germany (DE)
 
 Link: http://jacks-dogs-family.isc
 Last update: 2014/07/20
-Standards: HTML5, CSS3, JavaScript
+Standards: HTML5, CSS3, JavaScript, Normalize.css, jQuery, Modernizr
 Components: Bootstrap, jQuery, etc.
 Software: GitHub
