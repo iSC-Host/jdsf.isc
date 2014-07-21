@@ -19,13 +19,26 @@ Location: Munich (MÜ) , Bavaria (BY), Germany (DE)
 /* THANKS */
 
 * GitHub
+* HTML5 Boilerplate
+* Normalize.css
+* jQuery
+* Modernizr
+* Video.js
+* Cunity
+* PrestaShop
+* WordPress
+* MediaWiki
+* PHPFreeChat
 
 ----
 
 /* SITE */
 
 Link: http://jacks-dogs-family.isc
-Last update: 2014/07/20
+
+Create date: 2014/07/20
+Last update: 2014/07/21
+
 Standards: HTML5, CSS3
 Components: HTML5, CSS3, JavaScript, Normalize.css, jQuery, Modernizr
 Software: GitHub
