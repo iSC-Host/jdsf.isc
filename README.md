@@ -36,7 +36,7 @@ alternative to CSS resets)
 features in the user’s browser.)
 * [Video.js](http://www.videojs.com/) (A popular open source HTML5 video player)
 
-[HTML5 Boilerplate v4 provides legacy browser
+=> [HTML5 Boilerplate v4 provides legacy browser
 support](https://github.com/h5bp/html5-boilerplate/tree/v4) (IE 6+, Firefox
 3.6+, Safari 4+), but is no longer actively developed.
 
