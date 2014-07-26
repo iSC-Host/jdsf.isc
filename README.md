@@ -1,4 +1,4 @@
-"The Jack's Dogs Family" website
+﻿"The Jack's Dogs Family" website
 ========
 
 ## [Visit the site!!!](http://www.jacks-dogs-family.isc/)
@@ -16,7 +16,7 @@ This project is the product of many years of iterative development and combined
 community knowledge.
 
 * Website: [http://www.jacks-dogs-family.isc](http://www.jacks-dogs-family.isc)
-* Social Network: [The Jack's Dogs Family SN](www.jacks-dogs-family.isc/sn)
+* Social Network: [The Jack's Dogs Family SN](http://www.jacks-dogs-family.isc/sn)
 * Source: [https://github.com/iSC-Host/jdsf.isc](https://github.com/iSC-Host/jdsf.isc)
 
 ----
