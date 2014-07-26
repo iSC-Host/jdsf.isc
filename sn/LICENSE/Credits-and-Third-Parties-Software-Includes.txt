@@ -1,0 +1,42 @@
+CUNITY(R) V1.0beta - An open source social network / "your private social network"
+Copyright (C) 2011 Smart In Media GmbH & Co.KG
+CUNITY is a registered trademark of Dr. Martin R. Weihrauch
+
+CREDITS:
+
+* M. Omar Tariq for programming the CUNITY server structure and various modules
+* Julian Seibert for programming the admin panel, the gallery, the events and the updater
+* Uwe Buchner for logo and website design
+* Florian Brinker for programming the forum
+
+All rights that regard the CUNITY software as well as any parts of it
+(scripts, concept, design, images, ideas, logos) of the above mentioned 
+contributors were irrevocably transferred to Smart In Media GmbH & Co.KG.
+
+
+
+The following third-party-solutions/programs/scripts/designs are included with the software:
+--------------------------------------------------------------------------------------------
+
+- jquery under MIT-License
+- jcrop: (c) 2008-2009 Kelly Hallman under MIT-License
+- NicEdit: Copyright 2007-2008 Brian Kirchoff under MIT-License
+- PLUpload: Copyright 2009, Moxiecode Systems AB, for Cunity an OEM-license was bought - DO NOT REDISTRIBUTE AS STAND-ALONE!!!
+- Apprise, Badger, Sticky: Copyright Daniel Raftery, for Cunity Mr. Raftery granted use and distribution, http://thrivingkings.com/apprise/
+- Slimbox: (c) 2007-2010 Christophe Beyls under MIT-style license
+- jQuery webcam: Copyright (c) 2010, Robert Eisele under MIT-license (not yet implemented)
+- jQuery Chat Module: Copyright (c) 2009 Anant Garg, for Cunity an unlimited domains license was bought - DO NOT REDISTRIBUTE AS STAND-ALONE!!!
+- Icons: Copyright (c) 2010 Yusuke Kamiyamane, for Cunity a license was bought
+
+
+    
+Contact: 
+CUNITY(R)
+Smart In Media GmbH&Co.KG
+Dr. Martin R. Weihrauch
+Elsternweg 6
+50997 Koeln
+Germany
+http://www.cunity.net
+e-mail: weihrauch@cunity.net
+

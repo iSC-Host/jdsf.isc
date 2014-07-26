@@ -1,0 +1,147 @@
+{-$SCRIPT-EVENT_SHOW}
+<div id="guestsDialog"></div>
+<div id="inviteDialog">{-$GUEST_LIST_ADD}</div>
+<div class="bar-big">
+    <h1>Event: {-$EVENT_NAME}</h1>
+</div>
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+    <p style="min-width:0"><a href="#" style="font-weight: bold;">{-$events_time} :</a></p>
+    <p style="color: #3D98AA;">{-$TIME}</p>
+    <button id="privacy-button" style="margin: 2px 5px; float: right;" class="jui-button" icon="ui-icon-{-$PRIVACY_ICON}">{-$PRIVACY}</button>
+</div>
+<div class="box-main-a-3"></div>
+<!-- Profile Box Start -->
+<div class="profile">
+
+	<!-- Picture Box Start  -->
+	<div class="profile-box">
+		<div class="profile-box-pic">
+		<img src="{-$EVENT_IMG}" />
+		</div>
+	
+	</div>   
+	<!-- Picture Box End  -->
+
+	<!-- Profile Info Start -->
+	<div class="profile-info">
+	<div  style="position: relative; text-align: right; padding: 10px 0px 0px 0px;" id="attending_wrapper">     
+    {-if $OWN_EVENT}
+        <div class="buttonset">
+            <button class="jui-button" icon="ui-icon-plusthick" onclick="inviteGuests();">{-$events_invite_guests}</button>
+            <button id="my_attending" class="jui-button">{-$ATTENDING}</button><button onclick="atDrop();" class="jui-button" icon="ui-icon-gear" text="0" icon2="ui-icon-triangle-1-s">{-$events_settings}</button>
+        </div>
+        <ul id="attending_dropdown" class="ui-widget ui-widget-content ui-corner-all ui-menu" style="display: none; width: 130px; position: absolute; right: 4px; top: 100%px; text-align: left;">
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="events.php?c=edit&e={-$EVENT_ID}">{-$events_edit_event}</a>
+            </li>
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="javascript: delete_event();">{-$events_delete_event}</a>
+            </li>
+        </ul>
+    {-elseif $INVITED}
+        <div class="buttonset">
+            {-if $INVITE_LINK}
+            <button class="jui-button" icon="ui-icon-plusthick" onclick="inviteGuests();">{-$events_invite_guests}</button>
+            {-/if}
+            <button id="my_attending" class="jui-button">{-$ATTENDING}</button><button onclick="atDrop();" class="jui-button" icon="ui-icon-triangle-1-s" text="0">{-$events_select_rsvp}</button>
+        </div>
+        <ul id="attending_dropdown" class="ui-widget ui-widget-content ui-corner-all ui-menu" style="display: none; width: 130px; position: absolute; right: 24px; top: 32px; text-align: left;"><li class="ui-menu-item"><a class="ui-corner-all" href="javascript:respondInvitation({-$EVENTID},3,'{-$events_im_yes_attending}');">{-$events_im_yes_attending}</a></li><li class="ui-menu-item"><a class="ui-corner-all" href="javascript:respondInvitation({-$EVENTID},2,'{-$events_im_maybe_attending}');">{-$events_im_maybe_attending}</a></li><li class="ui-menu-item"><a class="ui-corner-all" href="javascript:respondInvitation({-$EVENTID},1,'{-$events_im_not_attending}');">{-$events_im_not_attending}</a></li><li class="ui-menu-item"><a class="ui-corner-all" href="javascript:removeEvent({-$EVENTID});">{-$events_remove_event}</a></li></ul>
+    {-else}
+        <div class="buttonset">
+            <button class="jui-button" icon="ui-icon-alert" id="my_attending">{-$ATTENDING}</button>
+        </div>
+    {-/if}	                                                                               
+    </div>
+    <div class="main_info_1" style="margin-top: 10px;"></div>
+    <div class="main_info_2" style="width: 330px;">        
+        <div class="info_line">
+            <div class="info_label">{-$events_place}:</div><span class="info_value">{-$PLACE}</span>
+        </div>
+        <div class="info_line" style="border-bottom-width: 0px;">
+            <div class="info_label">{-$events_created_by}:</div><span class="info_value"><a href="profile.php?user={-$CREATED_HASH}">{-$CREATED_NAME}</a></span>
+        </div>              
+    </div>
+    <div class="main_info_3"></div>
+	</div>
+	<!-- Profile Info End -->
+    <div class="clear"></div>
+</div>
+<!-- Profile Box End -->
+
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+    <p><a href="#" style="font-weight: bold;">{-$events_more_info}:</a></p>
+    <p style="color: #3D98AA;">{-$INFOS}</p>
+    <iframe name="guest_frame" style="display: none;"></iframe>
+</div>
+<div class="box-main-a-3" style="margin-bottom: 10px;"></div>
+<div class="guests" style="text-align:center">
+    <div class="guest-list">
+        <h1><a href="javascript:showGuests(3,'{-$EVENT_ID}');">{-$events_yes_rsvp} ({-$YES_COUNT})</a></h1>
+    </div>
+    <div class="guest-list">
+        <h1><a href="javascript:showGuests(2,'{-$EVENT_ID}');">{-$events_maybe_rsvp} ({-$MAYBE_COUNT})</a></h1>
+    </div>
+    <div class="guest-list">
+        <h1><a href="javascript:showGuests(0,'{-$EVENT_ID}');">{-$events_sent_invitation} ({-$INVITED_COUNT})</a></h1>
+    </div>  
+    <div class="clear"></div>
+</div>
+<!-- Box A Buttons box Start -->
+{-$SCRIPT-PINBOARD}
+<script type="text/javascript" src="includes/jGallery/jGallery.js"></script>
+<div class="box-main-a" style="margin-top: 10px;">
+<div class="box-main-a">
+	<div class="box-main-a-1" style="margin-top: 10px;"></div>
+        <div class="box-main-a-2">
+            <div id="video" style="float: left; border: 1px solid #ccc; border-radius: 5px; display: none"></div>
+            <div id="image" style="float: left; border: 1px solid #ccc; border-radius: 5px; display: none">
+    			<textarea class="input" id="watermark_image" name="watermark" style="width: 494px; background-color: #FFFFFF; border: 0px; border-radius: 5px; height: 50px; padding: 3px;"></textarea>
+    			<div id="img_upload_container" style="border-top: 1px dashed #ccc;">
+    				<form action="controllers/ajaxPinboardController.php" target="imgUploadFrame" id="imgUploadForm" style="width: 490px; padding: 3px 5px;" enctype="multipart/form-data" method="post">
+    					<div id="imgUploadFormLeft" style="float: left; width: 250px">
+    					<label for="pinimg"><small>{-$pinboard_select_image}</small></label>
+    					<br/>
+    					<input type="file" name="fu" id="imgUploadInput" style="border: 0px; padding-left: 0px;"/>
+    					<input type="hidden" name="json_data" value='{"p":"{-$PINBOARD_ID}","r":"{-$PINBOARD_RECEIVER}","c":"imgUpload"}'/>
+                        <input type="hidden" name="status_message" value="undefined" id="imgUploadMessage"/>
+    					</div>
+    					<iframe name="imgUploadFrame" id="imgUploadFrame" style="display: none;"></iframe>
+    					<small style="color: #aaa; display:block" class="clear">{-$pinboard_image_upload_info}</small>
+    				</form>
+    			</div>
+            </div>
+            <div id="url"></div>
+            <div id="status" style="float: left;">
+                <textarea class="input" id="watermark" name="watermark" style="width: 493px; background-color: #FFFFFF; border: 1px solid #ccc; border-radius: 5px; height: 50px; padding: 3px;"></textarea>
+            </div>
+            <div style="float: left; padding: 2px; padding-left: 5px;">
+            	<a href="javascript: showStatus();" id="showStatusDiv" style="display:block;width:22px;height:22px" title="{-$pinboard_share_image}"><img src="style/newcunity/img/newspaper.png" style="padding: 3px;"/></a>
+                <!-- <a href="javascript: shareImage();" id="showImageDiv" style="display:block;width:22px;height:22px" title="{-$pinboard_share_image}"><img src="style/newcunity/img/gallery.png" style="padding: 3px;"/></a>-->
+                <!-- <a href="javascript: shareUrl();" style="display:block" title="{-$pinboard_share_url}"><img src="style/newcunity/img/upload_file.png" style="padding: 3px;"/></a> -->
+            </div>
+            <div class="clear"></div>
+        </div>
+	<div class="box-main-a-3"></div>
+
+<!-- Box A  Sub Start -->
+<div id="share_button_wrap" style="display: none;">
+	<div class="box-main-a-sub-1">
+	<div class="comment-share-btn" id="button">
+	<img id="watermark_loader" src="style/newcunity/img/loading.gif" style="float: left; margin: 5px 10px; display: none;"/>
+	<!--<button>{-$pinboard_share_settings}</button>-->
+	<button id="share_button" class="jui-button" disabled="disabled" onclick="shareStatus();">{-$pinboard_comment}</button>
+	<div class="clear"></div>
+	</div>
+    <div class="clear"></div>
+	</div>
+	<div class="box-main-a-sub-2"></div>
+
+<!-- Box A  Sub End -->
+</div>
+</div>
+<div id="event_comments">
+<div id="pinBoard"></div>
+</div>
+</div>

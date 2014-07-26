@@ -1,0 +1,8 @@
+<div id="comments" style="width: 280px; display: {-$DISPLAY}">    
+    <textarea class="new_comment_area" name="comment" id="comment_area" style="width: 272px; height: 22px;margin:2px 0">{-$pinboard_comment_watermark}</textarea>
+    <div style="padding: 2px 0;display: none" id="send_comment">    
+    <button class="jui-button" onclick="imageComment({-$STATUS_ID},{-$CID});" disabled="disabled" name="comment" style="float: right;">{-$pinboard_comment}</button>
+    <img src="style/{-$STYLE}/img/loading.gif" style="float: right; margin: 8px 8px 7px 8px; display: none;" id="send_comment_load" />
+    <div class="clear"></div>
+    </div>
+</div>

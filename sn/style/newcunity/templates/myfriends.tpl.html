@@ -1,0 +1,51 @@
+{-$SCRIPT-MYFRIENDS}
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$TITLE}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+{-if OWN_FRIENDS}
+<button class="jui-button" onclick="location.href='friends.php?c=requests'" icon="ui-icon-help">
+    {-$friends_requests}{-$REQUESTS}
+</button>
+{-/if}
+<button class="jui-button" onclick="location.href='friends.php?c=invite'" icon="ui-icon-mail-open">
+    {-$friends_invite}
+</button>    
+</div>   
+<div class="box-main-a-3"></div>            
+ 
+<div class="box-main-a-1" style="margin-top: 10px;"></div>
+<div class="box-main-a-2 options-a-2">
+<table style="margin: 10px 0px; width: auto; font-size: 12px;">
+	<tr>
+		<td width="155px"><input id="searchFriend" type="text" /></td>
+		<td width="360px">
+		{-if $cunityconnected==true}
+        <select id="searchOption" style="margin-right:3px">
+		    <option value="none">{-$friends_select_cu}</option>
+		    <option value="open">OpenCunity</option>
+		</select>
+		{-/if}
+		<button id="searchMember" class="jui-button" icon="ui-icon-search">{-$friends_search}</button>		
+		<img src="style/default/img/loading.gif" id="search_load" style="display: none;" />
+        </td>
+	</tr>
+</table>
+</div>
+<div class="box-main-a-3"></div>
+
+
+<div id="myFriends" class="sample2" style="margin-top: 10px;">
+<div style="text-align: center;">
+<img src="style/newcunity/img/load.gif" style="margin: 10px auto;" />
+</div>
+</div>
+<div id="divLoadMoreStatus" align="center" style="display:none;">
+	<img src="style/default/img/load_big.gif" id="moreFriendsLoad" style="display: none; margin: 5px;"/>
+	<button id="loadMoreFriends" class="jui-button" onclick="loadAllFriends();" icon="ui-icon-plus" icon2="ui-icon-plus">{-$friends_show_all}</button>
+</div>

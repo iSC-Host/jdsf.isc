@@ -1,0 +1,175 @@
+<script language="javascript" type="text/javascript">
+    var global_new_added = '';
+
+    $(document).ready(function() {
+        $("#new_speed").change(function() {
+            $.ajax({
+                type: "POST",
+                url: "includes/ajaxModules.php?save=space",
+                data: "space=" + $("#new_speed").val(),
+                success: function()
+                {
+                    $("#change_success").fadeIn();
+                    $("#change_success").delay(200);
+                    $("#change_success").fadeOut();
+                }
+            })
+        })
+
+        $("#new_speed").focusin(function() {
+            $("#speed").css({"borderColor": "#E9C277", "borderWidth": "2px", "margin": "10px"});
+        })
+
+        $("#new_speed").focusout(function() {
+            $("#speed").css({"borderColor": "#ccc", "borderWidth": "1px", "margin": "11px"});
+        })
+
+        $("input:checkbox").change(function() {
+            if ($(this).is(':checked') == false)
+            {
+                $.ajax({
+                    url: "includes/ajaxModules.php?type=delete",
+                    type: "POST",
+                    data: "val=" + $(this).attr('id'),
+                    success: function()
+                    {
+                        $("#change_success").fadeIn();
+                        $("#change_success").delay(200);
+                        $("#change_success").fadeOut();
+                    }
+                });
+            }
+            else
+            {
+                $.ajax({
+                    url: "includes/ajaxModules.php?type=add",
+                    type: "POST",
+                    data: "val=" + $(this).attr('id'),
+                    success: function()
+                    {
+                        $("#change_success").fadeIn();
+                        $("#change_success").delay(200);
+                        $("#change_success").fadeOut();
+                    }
+                });
+            }
+
+        })
+
+        $("#add_new_filetype").click(function() {
+            $.ajax({
+                url: "includes/ajaxModules.php?type=add",
+                type: "POST",
+                data: "val=" + $("#new_filetype").val(),
+                success: function()
+                {
+                    $("#change_success").fadeIn();
+                    $("#change_success").delay(200);
+                    $("#change_success").fadeOut();
+                }
+            });
+            $("#new_filetype").val("");
+            location.reload();
+        })
+
+        $("#selectAll").click(function() {
+            var data = "jpg,bmp,gif,tif,psd,mp3,wav,m3u,mp4,m4v,m4a,wma,avi,mov,mpg,wmv,png,pdf,doc,xls,aac,3gp,divx,flv,jpeg,mid,midi,mkv,mpeg,ogg,ppt,odt,ods,odp,zip,rar{-$user_allowed_filetypes}";
+            $("input:checkbox").attr("checked", "checked");
+            $.ajax({
+                url: "includes/ajaxModules.php?modules=all",
+                type: "POST",
+                data: "fields=" + data,
+                success: function(data)
+                {
+                    $("#change_success").fadeIn();
+                    $("#change_success").delay(200);
+                    $("#change_success").fadeOut();
+                }
+            });
+        })
+
+        $("#selectNone").click(function() {
+            $("input:checkbox").attr("checked", "");
+            $.ajax({
+                url: "includes/ajaxModules.php?modules=none",
+                type: "POST",
+                success: function()
+                {
+                    $("#change_success").fadeIn();
+                    $("#change_success").delay(200);
+                    $("#change_success").fadeOut();
+                }
+            });
+        })
+
+    });
+</script>
+
+</script>
+<div id="change_success" style="display: none;">
+    <div id="change_success_inner">
+        <img src="style/default/img/check.png"/>{-$modules_saved_changes}
+    </div>
+</div>
+{-$FAIL}
+<h3>{-$admin_modules_filesharing}</h3>
+<p>{-$admin_modules_fileshare_select_types}</p>
+<p><button class="jui-button" id="selectAll">Select all</button><button class="jui-button" id="selectNone">Deselect all</button></p>
+<div style="float: left; width: 100px;">
+    <input type="checkbox" {-$jpg} name="type[]" value="jpg" id="jpg" style="width: auto;"/><label for="jpg">*.jpg</label><br />
+    <input type="checkbox" {-$bmp} name="type[]" value="bmp" id="bmp" style="width: auto;"/><label for="bmp">*.bmp</label><br />
+    <input type="checkbox" {-$gif} name="type[]" value="gif" id="gif" style="width: auto;"/><label for="gif">*.gif</label><br />
+    <input type="checkbox" {-$tif} name="type[]" value="tif" id="tif" style="width: auto;"/><label for="tif">*.tif</label><br />
+    <input type="checkbox" {-$psd} name="type[]" value="psd" id="psd" style="width: auto;"/><label for="psd">*.psd</label><br />
+    <input type="checkbox" {-$mp3} name="type[]" value="mp3" id="mp3" style="width: auto;"/><label for="mp3">*.mp3</label><br />
+    <input type="checkbox" {-$wav} name="type[]" value="wav" id="wav" style="width: auto;"/><label for="wav">*.wav</label><br />
+    <input type="checkbox" {-$m3u} name="type[]" value="m3u" id="m3u" style="width: auto;"/><label for="m3u">*.m3u</label><br />
+    <input type="checkbox" {-$mp4} name="type[]" value="mp4" id="mp4" style="width: auto;"/><label for="mp4">*.mp4</label><br />
+    <input type="checkbox" {-$m4v} name="type[]" value="m4v" id="m4v" style="width: auto;"/><label for="m4v">*.m4v</label><br />
+</div>                                   
+<div style="float: left; width: 100px;">
+    <input type="checkbox" {-$m4a} name="type[]" value="m4a" id="m4a" style="width: auto;"/><label for="m4a">*.m4a</label><br />
+    <input type="checkbox" {-$wma} name="type[]" value="wma" id="wma" style="width: auto;"/><label for="wma">*.wma</label><br />
+    <input type="checkbox" {-$avi} name="type[]" value="avi" id="avi" style="width: auto;"/><label for="avi">*.avi</label><br />
+    <input type="checkbox" {-$mov} name="type[]" value="mov" id="mov" style="width: auto;"/><label for="mov">*.mov</label><br />
+    <input type="checkbox" {-$mpg} name="type[]" value="mpg" id="mpg" style="width: auto;"/><label for="mpg">*.mpg</label><br />
+    <input type="checkbox" {-$wmv} name="type[]" value="wmv" id="wmv" style="width: auto;"/><label for="wmv">*.wmv</label><br />
+    <input type="checkbox" {-$png} name="type[]" value="png" id="png" style="width: auto;"/><label for="png">*.png</label><br />
+    <input type="checkbox" {-$pdf} name="type[]" value="pdf" id="pdf" style="width: auto;"/><label for="pdf">*.pdf</label><br />
+    <input type="checkbox" {-$doc} name="type[]" value="doc" id="doc" style="width: auto;"/><label for="doc">*.doc/.docx</label><br />
+    <input type="checkbox" {-$xls} name="type[]" value="xls" id="xls" style="width: auto;"/><label for="xls">*.xls/.xlsx</label><br />
+</div>                                   
+<div style="float: left; width: 100px;">
+    <input type="checkbox" {-$aac} name="type[]" value="aac" id="aac" style="width: auto;"/><label for="aac">*.aac</label><br />
+    <input type="checkbox" {-$3gp} name="type[]" value="3gp" id="3gp" style="width: auto;"/><label for="3gp">*.3gp</label><br />
+    <input type="checkbox" {-$divx} name="type[]" value="divx" id="divx" style="width: auto;"/><label for="divx">*.divx</label><br />
+    <input type="checkbox" {-$flv} name="type[]" value="flv" id="flv" style="width: auto;"/><label for="flv">*.flv</label><br />
+    <input type="checkbox" {-$jpeg} name="type[]" value="jpeg" id="jpeg" style="width: auto;"/><label for="jpeg">*.jpeg</label><br />
+    <input type="checkbox" {-$mid} name="type[]" value="mid" id="mid" style="width: auto;"/><label for="mid">*.mid</label><br />
+    <input type="checkbox" {-$midi} name="type[]" value="midi" id="midi" style="width: auto;"/><label for="midi">*.midi</label><br />
+    <input type="checkbox" {-$mkv} name="type[]" value="mkv" id="mkv" style="width: auto;"/><label for="mkv">*.mkv</label><br />
+    <input type="checkbox" {-$mpeg} name="type[]" value="mpeg" id="mpeg" style="width: auto;"/><label for="mpeg">*.mpeg</label><br />
+    <input type="checkbox" {-$ogg} name="type[]" value="ogg" id="ogg" style="width: auto;"/><label for="ogg">*.ogg</label><br />
+</div>                                   
+<div style="float: left; width: 100px;">
+    <input type="checkbox" {-$ppt} name="type[]" value="ppt" id="ppt" style="width: auto;"/><label for="ppt">*.ppt/.pptx</label><br />
+    <input type="checkbox" {-$odt} name="type[]" value="odt" id="odt" style="width: auto;"/><label for="odt">*.odt</label><br />
+    <input type="checkbox" {-$ods} name="type[]" value="ods" id="ods" style="width: auto;"/><label for="ods">*.ods</label><br />
+    <input type="checkbox" {-$odp} name="type[]" value="odp" id="odp" style="width: auto;"/><label for="odp">*.odp</label><br />
+    <input type="checkbox" {-$zip} name="type[]" value="zip" id="zip" style="width: auto;"/><label for="zip">*.zip</label><br />
+    <input type="checkbox" {-$rar} name="type[]" value="rar" id="rar" style="width: auto;"/><label for="rar">*.rar</label><br />
+</div>
+<br class="clear"/>
+<div style="margin: 15px 0px 5px 0px;">
+    <span>{-$admin_modules_filesharing_add_filetype}</span>
+    <input id="new_filetype" type="text" class="jui-button" size="10" style="width: 40px;">
+    <input id="add_new_filetype" type="submit" class="jui-button" style="width: 100px;" value="{-$admin_modules_filesharing_add}">
+    <div style="color: grey; font-style:italic;">{-$admin_modules_filesharing_filetypes_example}</div>
+</div>
+<form style="margin: 15px 0px;" method="post" action="modules.php?c=fshare">
+    <span>{-$admin_modules_filesharing_path}</span><br />
+    <input type="text" name="filepath" id="filepath" value="{-$PATH}" style="width: 400px;"/>    
+    <input type="submit" value="{-$admin_modules_save}" name="send"/>
+    <span style="display: inline-block;" id="fileshare_path_error">{-$FP_ERROR}</span>
+    <div style="color: grey; font-style:italic;">{-$admin_modules_filesharing_path_info}</div>
+</form>

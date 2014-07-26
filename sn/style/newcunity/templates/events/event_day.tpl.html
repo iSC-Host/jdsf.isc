@@ -1,0 +1,16 @@
+{-$SCRIPT-EVENT_DAY}
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>Events - {-$DAY}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+    <button class="jui-button" onclick="location.href='events.php'">Events</button>
+    <button class="jui-button" onclick="location.href='events.php?c=new'">{-$events_add_event}</button>    
+</div>
+<div class="box-main-a-3" style="margin-bottom: 10px;"></div>
+<div id="events_list">
+</div>

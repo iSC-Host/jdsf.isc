@@ -1,0 +1,62 @@
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    $("input[type='radio']").live('change',function(){
+        $(".cell_on").addClass("cell_none");
+        $(".cell_on").removeClass("cell_on");
+        $(this).parent().removeClass('cell_none');
+        $(this).parent().addClass('cell_on');
+    })
+})
+
+</script>
+<form action="modules.php?c=friends" method="POST">
+<h3>{-$admin_modules_friends_headline}</h3>
+<div style="width: 800px;">{-$admin_modules_friends_info}</div>
+<table style="margin: 10px; width: 800px;">
+<colgroup>
+    <col width="230px;"></col>
+    <col width="570px;"></col>
+</colgroup>
+    <tr>
+        <td>
+            <label for="friendstype_friends">
+                <div class="cell_{-$friendstype_friends}" style="width: 200px;">
+                    <input type="radio" name="friendstype" id="friendstype_friends" value="friends" style="width: auto;" {-$friends}/>
+                    {-$admin_modules_friends_friends}
+                </div>
+            </label>
+        </td>
+        <td>
+            <small>{-$admin_modules_friends_friends_info}</small>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="friendstype_members" style="margin-top: 10px;">
+                <div class="cell_{-$friendstype_members}" style="width: 200px;">
+                    <input type="radio" name="friendstype" id="friendstype_members" value="members" style="width: auto;" {-$members}/>
+                    {-$admin_modules_friends_members}
+                </div>
+            </label>
+        </td>
+        <td>
+            <small>{-$admin_modules_friends_members_info}</small>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="friendstype_none" style="margin-top: 10px;">
+                <div class="cell_{-$friendstype_none}" style="width: 200px;">
+                    <input type="radio" name="friendstype" id="friendstype_none" value="none" style="width: auto;" {-$none}/>
+                    {-$admin_modules_friends_none}
+                </div>
+            </label>
+        </td>
+        <td>
+            <small>{-$admin_modules_friends_none_info}</small>
+        </td>
+    </tr>
+</table>
+
+<input type="submit" name="send" value="{-$admin_modules_save}"/>
+</form>

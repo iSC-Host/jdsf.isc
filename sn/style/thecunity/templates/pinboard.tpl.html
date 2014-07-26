@@ -1,0 +1,72 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+{-$SCRIPT-PINBOARD}
+<div id="info_content">
+    <div id="mini_profile">
+        <a href="profile.php"><img src="{-$AVATAR}" width="70px" height="70px" id="mini_profile_img"/></a>
+        <div id="mini_profile_info">
+            <div id="mini_profile_name"><a href="profile.php">{-$USERNAME}</a></div>
+            <span id="mini_profile_edit"><a href="profile.php?c=edit">{-$edit_profile}</a></span><br />
+            <span id="mini_profile_img"><a href="profile.php?c=edit&do=img">{-$edit_img}</a></span><br />
+        </div>
+    </div>
+    <div id="head_content">
+        <div id="video"></div>
+        <div id="status" style="text-align: right; margin-top: 20px;">
+            <textarea class="input" id="watermark" name="watermark" style="width: 430px; background-color: #EFEFEF; border: 1px solid #ccc; border-radius: 2px;"></textarea>                        
+            <br />
+            <!-- <button>{-$pinboard_share_settings}</button> -->            
+            <button id="share_button" disabled="disabled" class="jui-button" style="margin-right: 5px;float:right" onclick="shareStatus();">{-$pinboard_share}</button>
+            <img id="watermark_loader" src="style/newcunity/img/loading.gif" style="margin: 9px 10px; display: none;float:right"/>                                   
+        </div>        
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="inner_content">
+    <div id="left_sidebar">
+        <ul class="sidebar_menu">
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/newspaper.png');"><a href="javascript: showOther('all');">{-$pinboard_all}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/top_news.png');"><a href="javascript: showOther('most');">{-$pinboard_most_recent}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/balloon.png');"><a href="javascript: showOther('status');">{-$pinboard_status_updates}</a></li>            
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/videos.png');"><a href="javascript: showOther('video');">{-$pinboard_videos}</a></li>
+            <!-- <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/gallery.png');"><a href="javascript: showOther('photo');">{-$pinboard_photos}</a></li> -->
+        </ul>
+    </div>
+    <div id="main_content">
+<div id="wall">
+</div><div id="pinBoard"></div>
+<div id="divLoadMoreStatus" style="display:none;text-align:center">
+<img src="style/default/img/load_big.gif" id="moreStatusLoad" style="display: none; margin: 5px;"/>
+<input onclick="loadMoreStatus();" class="jui-button" type="button" id="submitLoadMoreStatus" value="{-$pinboard_more}" />
+</div>

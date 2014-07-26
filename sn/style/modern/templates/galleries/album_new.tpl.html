@@ -1,0 +1,44 @@
+<div>{-$ERRORS}</div>
+
+<form action="galleries.php?c=new_album" method="POST">
+	<div>		
+			<h1>{-$galleries_details}</h1>
+			<div class="new_album_box">
+			<table>
+				<tr><td><label for="album_name" style="font-size: 13px; font-weight: bold;">{-$galleries_new_name}:</label></td></tr>
+				<tr><td><input type="text" name="album_name" id="album_name" style="width: 250px;"/></td></tr>
+				<tr><td style="vertical-align: top;"><label for="album_descr" style="font-size: 13px; font-weight: bold;">{-$galleries_new_desc}:</label></td></tr>
+				<tr><td><textarea name="album_descr" id="album_descr" style="width: 250px; height: 120px;"></textarea></td></tr>
+			</table>		
+			</div>
+	   <p>&nbsp;</p>		
+			<h1>{-$galleries_visibility}</h1>
+			<div class="new_album_box">
+				<input type="radio" name="album_privacy" value="0" id="opt1" checked="checked"/> 
+                    <label for="opt1">{-$galleries_show_me}</label>
+			<br/>
+                <input type="radio" name="album_privacy" value="1" id="opt2"/>
+                    <label for="opt2">{-$galleries_show_friends}</label>
+			<br/>
+                <input type="radio" name="album_privacy" value="2" id="opt3"/> 
+                    <label for="opt3">{-$galleries_show_all_users}</label>
+            </div>
+		<p>&nbsp;</p>
+            <h1>{-$galleries_space}</h1>
+            <div class="new_album_box">
+            <span id="space_left">{-$left}MB {-$galleries_space_left}! (~ {-$photos_left})</span>
+            <div id="progressbar" style="width:200px; height:15px"></div>
+            <script>
+                $(document).ready(function() {
+                  $("#progressbar").progressbar({ value: {-$percentage} });
+                });
+            </script>  
+            </div>
+		<p>&nbsp;</p>
+		<div class="new_album_box">
+		<input class="jui-button" type="submit" value="{-$galleries_create}"/>
+		</div>
+
+	</div>
+		
+</form>

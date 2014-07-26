@@ -1,0 +1,20 @@
+<div>    
+    <div class="main_list_status_bottom buttonset" style="vertical-align: bottom;margin-left: 7px; margin-top: 8px;">
+        <button class="file_time jui-button" icon="ui-icon-clock" title="if there is no time, the photo was uploaded with an old version of cunity, where the upload times were not logged!">{-$TIME}</button><button class="file_like jui-button" icon="ui-icon-heart" style="display: {-$LIKE_DISPLAY};" id="{-$FILE_ID}">{-$pinboard_like}</button><button class="file_dislike jui-button" icon="ui-icon-close" style="display: {-$DISLIKE_DISPLAY};" id="{-$FILE_ID}">{-$pinboard_dislike}</button><button class="file_comment jui-button" icon="ui-icon-comment" id="{-$FILE_ID}">{-$pinboard_comment}</button>
+    </div>
+</div>
+<div>{-$COMMENTS}</div>
+<div id="comments-{-$FILE_ID}" style="padding: 2px; width: 400px; display: {-$DISPLAY};margin-top: 3px;">
+    <div style="display: inline-block; padding: 1px; float: left;">
+        <img src="{-$AVATAR}" id="comment_avatar-{-$FILE_ID}" style="height: 40px; width: 40px;"/>
+    </div>
+    <div style="display: inline-block; float: left; margin-left: 7px;">
+    <textarea class="new_comment_area" name="comment" id="comment_area-{-$FILE_ID}" style="width: 300px; height: 40px;"></textarea>
+    <div style="padding: 3px; margin-top: 3px; border-top: 1px solid #ccc;" id="send_comment-{-$FILE_ID}">
+    <button class="jui-button" onclick="comment('{-$FILE_ID}');" disabled="disabled" name="comment" style="float: right;">{-$pinboard_comment}</button>
+    <img src="style/{-$STYLE}/img/loading.gif" style="float: right; margin: 8px 8px 7px 8px; display: none;" id="send_comment_load-{-$FILE_ID}" />
+    <div class="clear"></div>
+    </div>
+    </div>
+    <div class="clear"></div>
+</div>

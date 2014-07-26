@@ -1,0 +1,56 @@
+<h3>{-$admin_registration_general_general}</h3>
+<div>
+    <p>{-$admin_registration_general_min_age}</p>
+    <form action="registration.php?c=general" method="POST">
+        <label for="age">{-$admin_registration_age}</label>
+        <input type="number" size="2" id="age" name="age" style="width: 40px;" value="{-$AGE}"/>
+    
+</div>
+<div>
+    
+        <p>{-$admin_registration_general_info}</p>
+        <table border="0" id="reg_table"> 
+            <tr>
+                <th colspan="2">
+                    <b>{-$admin_registration_general_everybody}</b>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="reg_method" value="everybody" style="width: auto;" id="everybody"{-$EVERY}/>
+                </td>
+                <td>
+                    <label for="everybody">{-$admin_registration_general_everybody_info}</label>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <b>{-$admin_registration_general_activate}</b>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="reg_method" value="activate" style="width: auto;" id="activate"{-$ACTIVATE}/>
+                </td>
+                <td>
+                    <label for="activate">{-$admin_registration_general_activate_info}</label>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <b>{-$admin_registration_general_code}</b>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="reg_method" value="code" style="width: auto;" id="code"{-$CODE}/>
+                </td>
+                <td>
+                    <label for="code">{-$admin_registration_general_code_info}</label>
+                </td>
+            </tr>        
+        </table>
+        <p></p>
+        <input type="submit" name="send" value="{-$admin_registration_save}" class="jui-button"/>
+    </form>
+</div>

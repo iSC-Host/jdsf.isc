@@ -1,0 +1,17 @@
+<div style="padding: 10px;">
+<h3>Cunity Update</h3>
+<p>{-$admin_update_info}</p>
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    $("#startupdate").click(function(){
+        $("#updateframe").attr('src','controllers/ajaxUpdateController.php');
+        $("#updateloader").show();
+        $("#startupdate").attr('disabled','disabled');
+    })
+})
+</script>
+<button id="startupdate" class="jui-button">{-$admin_update_start}</button>
+<img src="style/default/img/progress.gif" style="display: none;" id="updateloader"/>
+<p class="message_green" id="successmessage" style="display: none;">{-$admin_update_success}</p>
+</div>
+<iframe id="updateframe" style="border-width: 1px; width: 500px; height: 200px;" ></iframe>

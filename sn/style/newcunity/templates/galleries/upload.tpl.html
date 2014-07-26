@@ -1,0 +1,39 @@
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$TITLE}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+{-$SCRIPT-GALLERIES_UPLOAD}
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+    <button class="jui-button" onclick="location.href='galleries.php?c=show_album&id={-$ALBUM_ID}'">{-$galleries_upload_back_album}</button>
+    <button class="jui-button" onclick="location.href='galleries.php?c=single_upload&id={-$ALBUM_ID}'">{-$galleries_upload_single_uploader}</button>
+</div>
+<div class="box-main-a-3"></div>    
+
+<div class="box-main-a-1" style="margin-top: 10px;"></div>
+<div class="box-main-a-2 options-a-2">
+	<div style="width:100%;height:90px">
+    <p><a>{-$galleries_space}</a> :</p>
+    <div id="progressbar" style="width:200px; height:17px;float: left; margin-left: 5px;"></div>
+    <div class="clear"></div>
+    <script>
+        $(document).ready(function() {
+          $("#progressbar").progressbar({ value: {-$percentage} });
+        });
+    </script>
+              
+    <span id="space_left" style="font-size: 11px; color: #0391c1; margin-left: 135px;">{-$left}MB {-$galleries_space_left}! (~ {-$photos_left})</span>    
+    <p>{-$galleries_upload_desc}</p>
+    <p>{-$galleries_upload_please_note}</p>
+    <p>Max Size: {-$MAX_SIZE}</p>
+	</div>    
+	<div style="border:1px solid #ccc;border-radius:7px;padding:10px">
+		<button id="fileupload"></button>
+		<button class="jui-button" onclick="$('#fileupload').uploadify('upload','*');">Upload files</button>
+		<div id="list"></div>
+	</div>
+</div>
+<div class="box-main-a-3"></div>

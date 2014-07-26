@@ -1,0 +1,46 @@
+<h3>{-$admin_users_user}</h3>
+<p></p>
+<script type="text/javascript" src="../includes/nicedit/nicEdit-latest.js"></script><script>bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
+
+<form action="users.php?c=list" method="POST">
+    <table border="0">
+        <tr>
+            <td colspan="2">
+                <h4>{-$admin_users_message}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               {-$admin_users_receiver}
+            </td>
+            <td>
+                {-$RECEIVER}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {-$admin_users_subject}
+            </td>
+            <td>
+                <input type="text" name="subject" size="50"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea name="body" rows="15" cols="70" dir="ltr"></textarea>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="jui-button">{-$admin_users_send}</button>
+    <button onclick="location.href='users.php?c=list'" class="jui-button">{-$admin_users_abort}</button>
+</form>

@@ -1,0 +1,29 @@
+<h3>{-$modules_chat}</h3>
+{-$FAIL}
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    $("#friends_cell").change(function(){
+        $("#all_cell").removeClass();
+        $("#all_cell").addClass("cell_none");
+        $("#friends_cell").removeClass();
+        $("#friends_cell").addClass("cell_on");
+    })
+
+    $("#all_cell").change(function(){
+        $("#friends_cell").removeClass();
+        $("#friends_cell").addClass("cell_none");
+        $("#all_cell").removeClass();
+        $("#all_cell").addClass("cell_on");
+    })
+})
+</script>
+<h5>{-$modules_chat_with_header}</h5>
+<form action="modules.php?c=chat" method="POST">
+{-$CHAT_WITH}
+<input type="submit" class="jui-button" value="{-$admin_modules_save}"/>
+</form>
+<div id="change_success" style="display: none;">
+    <div id="change_success_inner">
+        <img src="style/default/img/check.png"/>{-$admin_modules_saved_changes}
+    </div>
+</div>

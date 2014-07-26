@@ -1,0 +1,32 @@
+<div>{-$ERRORS}</div>
+
+<form action="galleries.php?c=edit&id={-$ALBUM_ID}" method="POST">
+
+	<div>			
+			<h1>{-$galleries_details}</h1>
+			<div style="margin: 10px;">
+		    <table>
+				<tr><td><label for="album_name">{-$galleries_new_name}:</label></td>
+				<td><input type="text" name="album_name" id="album_name" value="{-$galleries_edit_album_name}"/></td></tr>
+				<tr><td><label for="album_descr">{-$galleries_new_desc}:</label></td>
+				<td><textarea name="album_descr" id="album_descr">{-$galleries_edit_description}</textarea></td></tr>
+			</table>		
+			</div>
+			<h1>{-$galleries_visibility}</h1>
+			<div style="margin: 10px;">
+				<input type="radio" name="album_privacy" value="0" id="opt1" {-$galleries_edit_priv_0}/> 
+                    <label for="opt1">{-$galleries_show_me}</label>
+			<br/>
+                <input type="radio" name="album_privacy" value="1" id="opt2" {-$galleries_edit_priv_1}/>
+                    <label for="opt2">{-$galleries_show_friends}</label>
+			<br/>
+                <input type="radio" name="album_privacy" value="2" id="opt3" {-$galleries_edit_priv_2}/> 
+                    <label for="opt3">{-$galleries_show_all_users}</label>
+            <p>&nbsp;</p>
+            <input type="hidden" name="id" value="{-$ALBUM_ID}"/>
+		    <input class="jui-button" type="submit" value="{-$galleries_save}"/>
+            </div>				
+
+	</div>
+		
+</form>

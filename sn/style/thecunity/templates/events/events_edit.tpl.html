@@ -1,0 +1,120 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements.
+
+   #####################################################################################
+   -->
+<div id="info_content">
+    <div id="mini_profile">
+        <a href="profile.php"><img src="{-$AVATAR}" width="70px" height="70px" id="mini_profile_img"/></a>
+        <div id="mini_profile_info">
+            <div id="mini_profile_name"><a href="profile.php">{-$USERNAME}</a></div>
+            <span id="mini_profile_edit"><a href="profile.php?c=edit">{-$edit_profile}</a></span><br />
+            <span id="mini_profile_img"><a href="profile.php?c=edit&do=img">{-$edit_img}</a></span><br />
+        </div>
+    </div>
+    <div id="head_content">
+    </div>
+</div>
+<div id="inner_content">
+    <div id="left_sidebar">
+        <ul class="sidebar_menu" style="margin: 0px;">
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/calendar.png');"><a href="events.php">{-$events_events}</a></li>
+        </ul>
+    </div>
+    <div id="main_content">
+    {-$ERROR}
+        <form enctype="multipart/form-data" action="events.php?c=edit&e={-$EVENT_ID}" method="POST">
+        <h3 style="margin: 0px; padding: 0px; font-size: 16px;">{-$events_edit_event}</h3>
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_name}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="text" name="name" value="{-$NAME}"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_place}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="text" name="place" value="{-$PLACE}"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_more_info}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><textarea name="info" style="width: 250px; height: 100px;">{-$INFO}</textarea></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_start}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value">
+                    <script language="javascript" type="text/javascript">
+                    $("document").ready(function(){
+                        $("#start").datepicker({altFormat: "yy-mm-dd", altField: '#start_date_val', dateFormat: "dd.mm.yy", dayNames: ['{-$sunday}','{-$monday}','{-$tuesday}','{-$wednesday}','{-$thursday}','{-$friday}','{-$saturday}'], dayNamesMin: ['{-$su}','{-$mo}','{-$tu}','{-$we}','{-$th}','{-$fr}','{-$sa}'], monthNames: ['{-$month_01}','{-$month_02}','{-$month_03}','{-$month_04}','{-$month_05}','{-$month_06}','{-$month_07}','{-$month_08}','{-$month_09}','{-$month_10}','{-$month_11}','{-$month_12}']});
+                    })
+                    </script>
+                    <input type="text" id="start" class="event_cal_field" value="{-$START_DATE}"/>
+                    <input type="hidden" id="start_date_val" name="startdate" value="{-$START_DATE_VAL}"/>
+                    <select class="event_time_select" id="start_time_val" name="starttime">
+                        {-$TIME_START}
+                    </select>
+                    <div class="clear"></div>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_end}</td>
+                    <td style="vertical-align: middle; text-align: left; position: relative;" class="privacy_value">
+                    <script language="javascript" type="text/javascript">
+                    $("document").ready(function(){
+                        $("#end").datepicker({altFormat: "yy-mm-dd", altField: '#end_date_val', dateFormat: "dd.mm.yy", dayNames: ['{-$sunday}','{-$monday}','{-$tuesday}','{-$wednesday}','{-$thursday}','{-$friday}','{-$saturday}'], dayNamesMin: ['{-$su}','{-$mo}','{-$tu}','{-$we}','{-$th}','{-$fr}','{-$sa}'], monthNames: ['{-$month_01}','{-$month_02}','{-$month_03}','{-$month_04}','{-$month_05}','{-$month_06}','{-$month_07}','{-$month_08}','{-$month_09}','{-$month_10}','{-$month_11}','{-$month_12}']});
+                    })
+                    </script>
+                    <input type="text" id="end" class="event_cal_field" value="{-$END_DATE}"/>
+                    <input type="hidden" id="end_date_val" name="enddate" value="{-$END_DATE_VAL}"/>
+                    <select class="event_time_select" id="end_time_val" name="endime">
+                        {-$TIME_END}
+                    </select>
+                    <div class="clear"></div>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_privacy}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value">
+                    <input name="privacy" id="privacy_closed" type="radio" value="0" {-$PRIVATE}/>
+                    <label for="privacy_closed">{-$events_closed}</label>
+                    <br />
+
+                    <input name="privacy" id="privacy_public" type="radio" {-$PUBLIC} value="1"/>
+                    <label for="privacy_public">{-$events_public}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$events_upload_image}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value">
+                    <input type="file" class="event_info_file" name="event_image_file" style="border-width: 0px;"/>
+                    </td>
+                </tr>
+            </table>
+        	<input class="jui-button" name="save" type="submit" value="{-$events_save}" style="display: inline-block;"/>
+        </form>

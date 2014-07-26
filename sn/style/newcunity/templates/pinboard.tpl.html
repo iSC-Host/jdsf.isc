@@ -1,0 +1,78 @@
+{-$SCRIPT-PINBOARD}
+<script type="text/javascript" src="includes/jGallery/jGallery.js"></script>
+<div class="bar">
+    <div class="bar-sub-a"></div>
+    <div class="bar-sub-b">
+        <h1 id="dsf">{-$pinboard_header}</h1>
+    </div>
+    <div class="bar-sub-c"></div>
+</div>
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2 buttonset">
+    <input type="radio" icon="ui-icon-signal-diag" id="show_all"class="jui-button" name="sort"checked="checked" onclick="loadPinboard('all')"/><label for="show_all">{-$pinboard_all}</label><input type="radio" id="show_status" icon="ui-icon-comment" name="sort"class="jui-button" onclick="loadPinboard('status')"/><label for="show_status">{-$pinboard_status_updates}</label><input type="radio" id="show_videos" icon="ui-icon-video"name="sort" class="jui-button" onclick="loadPinboard('video')"/><label for="show_videos">{-$pinboard_videos}</label><input type="radio" id="show_images" icon="ui-icon-image" name="sort"class="jui-button" onclick="loadPinboard('image')"/><label for="show_images">{-$pinboard_photos}</label>        
+</div>
+<div class="box-main-a-3"></div>
+<!-- Box A Buttons box Start -->
+<div class="box-main-a">
+    <div class="box-main-a-1" style="margin-top: 10px;"></div>
+    <div class="box-main-a-2">
+        <div id="video" style="float: left; border: 1px solid #ccc; border-radius: 5px; display: none"></div>
+        <div id="image" style="float: left; border: 1px solid #ccc; border-radius: 5px; display: none">
+            <textarea class="input" id="watermark_image" name="watermark" style="width: 494px; background-color: #FFFFFF; border: 0px; border-radius: 5px; height: 50px; padding: 3px;"></textarea>
+            <div id="img_upload_container" style="border-top: 1px dashed #ccc;">
+                <form action="controllers/ajaxPinboardController.php" target="imgUploadFrame" id="imgUploadForm" style="width: 490px; padding: 3px 5px;" enctype="multipart/form-data" method="post">
+                    <div id="imgUploadFormLeft" style="float: left; width: 250px">
+                        <label for="pinimg"><small>{-$pinboard_select_image}</small></label>
+                        <br/>
+                        <input type="file" name="fu" id="imgUploadInput" style="border: 0px; padding-left: 0px;"/>
+                        <input type="hidden" name="json_data" value='{"p":"{-$PINBOARD_ID}","r":"{-$PINBOARD_RECEIVER}","c":"imgUpload"}'/>
+                        <input type="hidden" name="status_message" value="undefined" id="imgUploadMessage"/>
+                    </div>
+                    <iframe name="imgUploadFrame" id="imgUploadFrame" style="display: none;"></iframe>
+                    <small style="color: #aaa; display:block" class="clear">{-$pinboard_image_upload_info}</small>
+                </form>
+            </div>                
+        </div>
+        <div id="url"></div>
+        <div id="status" style="float: left;">
+            <textarea class="input" id="watermark" name="watermark" style="width: 493px; background-color: #FFFFFF; border: 1px solid #ccc; border-radius: 5px; height: 50px; padding: 3px;"></textarea>                    
+        </div>
+        <div style="float: left; padding: 2px; padding-left: 5px;">
+            <a href="javascript: showStatus();" id="showStatusDiv" style="display:block;width:22px;height:22px" title="{-$pinboard_share_image}"><img src="style/newcunity/img/newspaper.png" style="padding: 3px;"/></a>
+            <a href="javascript: shareImage();" id="showImageDiv" style="display:block;width:22px;height:22px" title="{-$pinboard_share_image}"><img src="style/newcunity/img/gallery.png" style="padding: 3px;"/></a>
+            <!-- <a href="javascript: shareUrl();" style="display:block" title="{-$pinboard_share_url}"><img src="style/newcunity/img/upload_file.png" style="padding: 3px;"/></a> -->
+        </div>
+        <div class="clear"></div>			
+    </div>    
+    <div class="box-main-a-3"></div>
+
+    <!-- Box A  Sub Start -->
+    <div id="share_button_wrap" style="display: none;">
+        <div class="box-main-a-sub-1">
+            <div class="comment-share-btn" style="width:200px">
+                <button id="share_button" class="jui-button" style="float:right;font-size:12px" onclick="shareStatus();">{-$pinboard_share}</button>
+                <img id="watermark_loader" src="style/newcunity/img/loading.gif" style="float:right; margin: 5px 10px; display: none;"/>
+
+                <!--  <button icon="ui-icon-gear" class="jui-button" icon2="ui-icon-triangle-1-s" text="0" style="float:left;font-size:12px">{-$pinboard_share_settings}</button>-->     
+
+
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="box-main-a-sub-2"></div>
+
+        <!-- Box A  Sub End -->
+    </div>
+</div>
+
+
+<!-- Box A Buttons box End -->
+<div class="line-grey"></div>
+
+<div id="wall">
+</div><div id="pinBoard"></div>
+<div id="divLoadMoreStatus" style="display:none;text-align:center">
+    <img src="style/default/img/load_big.gif" id="moreStatusLoad" style="display: none; margin: 5px;"/>
+    <button  onclick="loadMoreStatus();" class="jui-button" id="submitLoadMoreStatus" icon="ui-icon-plus" icon2="ui-icon-plus">{-$pinboard_more}</button>
+</div>

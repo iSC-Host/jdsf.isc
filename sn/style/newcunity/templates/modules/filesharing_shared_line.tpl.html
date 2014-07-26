@@ -1,0 +1,19 @@
+<tr id="fileRow-{-$FILEID}">
+    <td height="8px" colspan="1" title="{-$FILENAME}">
+        <a href="javascript: fileDetails({-$FILEID},{-$CUNITYID});">{-$FILENAME}</a>
+    </td>
+    <td style="color: #808080;">
+        <a href="profile.php?user={-$CUNITYID}-{-$SHAREHASH}">{-$SHARENAME}</a>
+    </td>
+    <td style="position: relative">
+        <button class="jui-button" text="0" icon="ui-icon-triangle-1-s" onclick="showMenu('file_dropdown-{-$FILEID}-{-$CUNITYID}')">{-$filesharing_options}</button>
+        <ul id="file_dropdown-{-$FILEID}-{-$CUNITYID}" class="file-dropdown-menu ui-widget ui-widget-content ui-corner-all ui-menu" style="display: none; width: 130px; position: absolute; right: 10px; text-align: left; z-index: 999999;">
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="javascript:unshare({-$FILEID},{-$CUNITYID})">{-$filesharing_delete_list}</a>
+            </li>
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="javascript:downloadFile({-$FILEID},{-$CUNITYID});">{-$filesharing_download}</a>
+            </li>
+        </ul>
+    </td>
+</tr>

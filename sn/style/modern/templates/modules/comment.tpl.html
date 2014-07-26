@@ -1,0 +1,14 @@
+<div class="comment {-$CLASS}" id="comment-{-$COMMENT_ID}" style="padding: 2px; margin: 1px 0px 2px 0px; width: 406px; display: {-$DISPLAY};">
+    <a href="profile.php?user={-$USERHASH}" style="float: left;">{-$AVATAR}</a>
+    <div class="right_comment">
+        <div class="comment_cont">
+            <a href="profile.php?user={-$USERHASH}" style="text-decoration: none; color: #666;"><b>{-$USERNAME}</b></a>
+            <span>{-$COMMENT}</span>
+        </div>
+        <div class="comment_footer">
+            <i>{-$COMMENT_TIME}</i>
+        </div>
+    </div>
+    {-$DELETE}    
+    <div class="clear"></div>
+</div>

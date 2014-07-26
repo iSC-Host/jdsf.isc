@@ -1,0 +1,328 @@
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$NAME} - {-$EDIT_TITLE}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+<!-- Main Blue bar End -->
+<div class="clear"></div>
+
+<!-- Profile Box Start -->
+<div class="profile">
+
+{-$PROFILE_INFO}
+
+	<!-- Picture Box Start  -->
+	<div class="profile-box">
+		<div class="profile-box-pic">
+		<img src="{-$PROFILE_PIC}" style="width:200px;height:auto"/>
+		</div>
+
+	</div>
+	<!-- Picture Box End  -->
+
+	<!-- Profile Info Start -->
+	<div class="profile-info">
+		<button class="jui-button" style="float: right; margin-bottom: 10px;" onclick="location.href='profile.php'" icon="ui-icon-person">{-$profile_edit_back}</button>
+		<div class="clear"></div>
+
+    <div class="main_info_1"></div>
+    <div class="main_info_2" style="width: 330px;">
+        <ul class="sidebar_menu" style="margin: 0px;">
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/user.png');"><a href="profile.php">{-$profile_edit_back}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/edit.png');"><a href="profile.php?c=edit&do=general">{-$profile_edit_general}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/user_edit.png');"><a href="profile.php?c=edit&do=personal">{-$profile_edit_personal}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/lock.png');"><a href="profile.php?c=edit&do=privacy">{-$profile_edit_privacy}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/mail.png');"><a href="profile.php?c=edit&do=notifications">{-$profile_edit_notifications}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/edit_img.png');"><a href="profile.php?c=edit&do=img">{-$profile_edit_image_edit}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/edit-pw.png');"><a href="profile.php?c=edit&do=passwd">{-$profile_edit_change_password}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/block.png');"><a href="profile.php?c=edit&do=blocked">{-$profile_edit_blocked_persons}</a></li>
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/fail.png');"><a href="profile.php?c=edit&do=delete">{-$profile_edit_delete_account}</a></li>
+        </ul>
+    </div>
+    <div class="main_info_3"></div>
+	</div>
+	<div class="profile-grid">
+	{-$MSG}
+    {-if $do == 'notifications'}
+        <script language="javascript" type="text/javascript">
+        $("document").ready(function(){
+            $(".privacy_value").children('input').each(function(){
+                $(this).button({
+                    icons: {
+                        primary: 'ui-icon-mail-closed'
+                    },
+                    text: false
+                });
+            })
+        })
+        </script>
+        <form action="profile.php?c=edit&do=notifications&extra=refresh" method="POST">            
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line" style="border: 0px;">
+                    <td style="text-center; vertical-align: middle; border-bottom: 2px solid #aaa;" class="privacy_label"><label for="searching">{-$profile_edit_notify_when_so}...</label></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_get_message}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">                    
+                        <input type="checkbox" name="get_message" value="1" id="get_msg" {-$GET_MESSAGE}/>
+                        <label for="get_msg">{-$profile_edit_get_message}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_add_friend}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="add_friend" value="1" id="add_friend" {-$ADD_FRIEND}/>
+                        <label for="add_friend">{-$profile_edit_add_friend}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_post_on_pin}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="post_on_pinboard" value="1" id="post_pin" {-$POST_ON_PINBOARD}/>
+                        <label for="post_pin">{-$profile_edit_post_on_pin}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_pinboard_comment_status}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="status_comment" value="1" id="pin_com_stat" {-$STATUS_COMMENT}/>
+                        <label for="pin_com_stat">{-$profile_edit_pinboard_comment_status}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_comment_status}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="status_comment" value="1" id="com_stat" {-$STATUS_COMMENT}/>
+                        <label for="com_stat">{-$profile_edit_comment_status}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_also_comment_status}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="also_status_comment" value="1" id="also_com_stat" {-$ALSO_STATUS_COMMENT}/>
+                        <label for="also_com_stat">{-$profile_edit_also_comment_status}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_invited}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="invite_events" value="1" id="invited" {-$INVITE_EVENTS}/>
+                        <label for="invited">{-$profile_edit_invited}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_file_shared}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="file_shared" value="1" id="file_shared" {-$FILE_SHARED}/>
+                        <label for="file_shared">{-$profile_edit_file_shared}</label>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label>{-$profile_edit_forum_new_post}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <input type="checkbox" name="post_forum" value="1" id="forum_post" {-$POST_FORUM}/>
+                        <label for="forum_post">{-$profile_edit_forum_new_post}</label>
+                    </td>
+                </tr>
+            </table>
+            <input class="jui-button input_submit" type="submit" value="{-$profile_edit_save}"/>
+        </form>
+    {-elseif $do == 'privacy'}    
+        <form action="profile.php?c=edit&do=privacy" method="POST">            
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line">
+                    <td style="text-center; vertical-align: middle;" class="privacy_label"><label for="searching">{-$profile_edit_privacy_searching}</label></td>
+                    <td style="text-center; vertical-align: middle;" class="privacy_value">
+                        <select name="searching" id="searching" class="privacy_select">
+                            <option value="0" {-$SEARCHING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$SEARCHING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$SEARCHING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$SEARCHING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label"><label for="friending">{-$profile_edit_privacy_friending}</label></td>
+                    <td style="vertical-align: middle;" class="privacy_value">
+                        <select name="friending" id="friending" class="privacy_select">
+                            <option value="0" {-$FRIENDING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$FRIENDING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$FRIENDING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$FRIENDING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label"><label for="messaging">{-$profile_edit_privacy_messages}</label></td>
+                    <td style="vertical-align: middle;" class="privacy_value">
+                        <select name="messaging" id="messaging" class="privacy_select">
+                            <option value="0" {-$MESSAGING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$MESSAGING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$MESSAGING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$MESSAGING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label"><label for="pinboard_viewing">{-$profile_edit_privacy_pinboard}</label></td>
+                    <td style="vertical-align: middle;" class="privacy_value">
+                        <select name="pinboard_viewing" id="pinboard_viewing" class="privacy_select">
+                            <option value="0" {-$PINBOARD_VIEWING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$PINBOARD_VIEWING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$PINBOARD_VIEWING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$PINBOARD_VIEWING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label"><label for="profile_viewing">{-$profile_edit_privacy_profile}</label></td>
+                    <td style="vertical-align: middle;" class="privacy_value">
+                        <select name="profile_viewing" id="profile_viewing" class="privacy_select">
+                            <option value="0" {-$PROFILE_VIEWING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$PROFILE_VIEWING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$PROFILE_VIEWING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$PROFILE_VIEWING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label"><label for="address_viewing">{-$profile_edit_privacy_address}</label></td>
+                    <td style="vertical-align: middle;" class="privacy_value">
+                        <select name="address_viewing" id="address_viewing" class="privacy_select">
+                            <option value="0" {-$ADDRESS_VIEWING_0}>{-$profile_edit_privacy_everyone}</option>
+                            <option value="1" {-$ADDRESS_VIEWING_1}>{-$profile_edit_privacy_everyone_in_cunity}</option>
+                            <option value="2" {-$ADDRESS_VIEWING_2}>{-$profile_edit_privacy_friends_of_friends}</option>
+                            <option value="3" {-$ADDRESS_VIEWING_3}>{-$profile_edit_privacy_friends_only}</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input class="jui-button" type="submit" class="input_submit" name="save" value="{-$profile_edit_save}"/>
+        </form>
+    {-elseif $do == 'img'}       
+        <script src="includes/jcrop/js/jquery.Jcrop.pack.js"></script>
+        <link rel="stylesheet" href="includes/jcrop/css/jquery.Jcrop.css" type="text/css" />
+        {-$SCRIPT-PROFILE_EDIT_IMAGE}
+        <form enctype="multipart/form-data" action="profile.php?c=edit&do=img" method="POST" id="img_form">
+        	<table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_new_img}<br /><span class="table_info">{-$profile_edit_jpg}</span></td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="file" name="new_profile_pic" id="new_profile_pic"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_img}<br /><span class="table_info">{-$profile_edit_img_appears}</span></td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><img src="{-$PROFILE_PIC}" style="width:200px;height:auto" id="profile_pic"/></td>
+                </tr>
+        </form>
+        <form action="profile.php?c=edit&do=img" method="POST">
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_avatar_preview}<br /><span class="table_info">{-$profile_edit_select_avatar}</span></td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value">
+                        <div style="overflow: hidden; height: 100px; width: 100px;"><img src="{-$PROFILE_PIC}" style="width:200px;height:auto" class="avatar" id="avatar_preview"/></div>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" id="x" name="x" value=""/>
+    		<input type="hidden" id="y" name="y" value=""/>
+    		<input type="hidden" id="x2" name="x2" value="" />
+    		<input type="hidden" id="y2" name="y2" value="" />
+    		<input type="hidden" id="w" name="w" value="" />
+    		<input type="hidden" id="h" name="h" value="" />
+            <input class="jui-button" type="submit" class="input_submit" value="{-$profile_edit_save}" id="submit_full"/>
+            <input class="jui-button" type="submit" class="input_submit" value="{-$profile_edit_delete}" name="delete_image"/>
+        </form>
+    {-elseif $do == 'passwd'}
+        <form action="profile.php?c=edit&do=passwd" method="POST" id="change_pw_table">           
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_pw_current}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="password" name="pw1"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_pw_new}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="password" name="pw2"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_pw_rpt}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="password" name="pw3"/></td>
+                </tr>
+            </table>
+        	<input class="jui-button input_submit" type="submit" value="{-$profile_edit_save}" style="display: inline-block;"/>
+        	<div style="display: inline-block;">{-$INFO}</div>
+        </form>
+    {-elseif $do == 'blocked'}
+        {-$SCRIPT-PROFILE_EDIT_BLOCKED}        
+        <h3 style="margin: 0px; padding: 0px;">{-$profile_edit_blocked_persons}</h3>
+        <div id="blocked_friends">{-$BLOCKED}</div>
+    {-elseif $do == 'personal'}
+    {-$SCRIPT-PROFILE_EDIT_PERSONAL}
+        <form action="profile.php?c=edit&do=personal" method="POST" id="personal_table">           
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                {-$PERSONAL_LIST}
+            </table>
+        	<input class="jui-button input_submit" type="submit" value="{-$profile_edit_save}" style="display: inline-block;"/>
+        	<div style="display: inline-block;">{-$INFO}</div>
+        </form>
+    {-elseif $do == 'general'}
+        <form action="profile.php?c=edit&do=general" method="POST" id="general_table">        
+            <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_email}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="email" class="jui-button_input" name="mail" value="{-$MAIL}"/></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_title}</td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><select name="title" class="jui-button_input"><option value="0" {-$WM}>{-$profile_edit_woman}</option><option value="1" {-$ME}>{-$profile_edit_men}</option></select></td>
+                </tr>
+                <tr class="privacy_line">
+                    <td style="vertical-align: middle;" class="privacy_label">{-$profile_edit_birthday}&nbsp;<small style="font-size: 11px;">{-$profile_edit_date_format}</small></td>
+                    <td style="vertical-align: middle; text-align: left;" class="privacy_value"><input type="text" name="day" value="{-$DAY}" size="2"/>&nbsp;<input type="text" name="month" value="{-$MONTH}" size="2"/>&nbsp;<input type="text" name="year" value="{-$YEAR}" size="4"/></td>
+                </tr>
+            </table>
+        	<input class="jui-button input_submit" type="submit" value="{-$profile_edit_save}" style="display: inline-block;"/>
+        	<div style="display: inline-block;">{-$INFO}</div>
+        </form>
+    {-elseif $do == 'personal_requests'}
+        <script language="javascript" type="text/javascript">
+        function deleteRequest(rid)
+        {
+            apprise('{-$profile_edit_confirm_delete_request}', {confirm: true}, function(r){
+                if(r)
+                {
+                    var r = rid;
+                    var data = '{"action":"deleteRequest", "relationship_id": "'+ rid +'"}';
+                    $.post("controllers/ajaxProfileController.php", {
+                		json_data : data
+                	}, function(data_back) {
+                	   if(data_back.status == 1)
+        	               location.href='profile.php?c=edit&do=personal';
+                }
+            })
+        }
+        function confirmRequest(rid)
+        {
+            var r = rid;
+            var data = '{"action":"confirm_request", "relationship_id": "'+ rid +'"}';
+            $.post("controllers/ajaxProfileController.php", {
+        		json_data : data
+        	}, function(data_back) {
+        	   if(data_back.status == 1)
+        	       location.href='profile.php?c=edit&do=personal';
+        	}, "json");
+        }
+        </script>        
+        <table border="0" cellpadding="1" cellspacing="1" id="privacy_table">
+            {-$REQUESTS}
+        </table>
+    {-elseif $do == 'delete'}       
+        <form action="profile.php?c=edit&do=delete" method="post" style="text-align: center;">
+            <p class="message_red">{-$profile_edit_account_delete_info}</p>
+            <p style="padding: 10px 0px;"><label for="password">{-$profile_edit_password}: </label><input type="password" name="password" id="password"/><input type="submit" value="{-$profile_edit_delete_account}" class="jui-button" name="confirm"/></p>                                    
+        </form>
+    {-/if}
+    </div>
+	<!-- Profile Info End -->
+
+</div>
