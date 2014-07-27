@@ -17,6 +17,8 @@ community knowledge.
 
 * Website: [http://www.jacks-dogs-family.isc](http://www.jacks-dogs-family.isc)
 * Social Network: [The Jack's Dogs Family SN](http://www.jacks-dogs-family.isc/sn)
+
+* Test website: [http://jdsf.github.io/](http://isc-host.github.io/jdsf.isc/)
 * Source: [https://github.com/iSC-Host/jdsf.isc](https://github.com/iSC-Host/jdsf.isc)
 
 ----
