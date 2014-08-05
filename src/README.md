@@ -64,6 +64,11 @@ Also it includes this softwares for all visitors and fans:
 Anyone and everyone is welcome to [contribute](CONTRIBUTING.md).
 Many developers have helped make "The Jack's Dogs Family" website what it is today.
 
+## Authors
+| [![twitter/SuriyaaKudoIsc](https://secure.gravatar.com/avatar/fdf96ca751e2e9d247b77d95e6f70da9?s=64)](https://twitter.com/SuriyaaKudoIsc "Follow @SuriyaaKudoIsc on Twitter") | [![IMG](LINK)](LINK "MESSAGE") | [![IMG](LINK)](LINK "MESSAGE") | [![IMG](LINK)](LINK "MESSAGE") |
+|---|---|---|---|
+| [Suriyaa Kudo](http://suriyaakudo.bplaced.net/) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) |
+
 ----
 
 (c) *2014-present* **iSC Host**
