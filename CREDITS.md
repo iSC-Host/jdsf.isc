@@ -3,26 +3,23 @@ CREDITS
 
 ## Information
 
-This is at least a partial credits-file of people that have
-contributed to the Linux project.
+This is at least a partial credits-file of people that have contributed to the jdsf.isc project.
 
-It is sorted by name and formatted to allow easy grepping 
-and beautification by scripts.
+It is sorted by name and formatted to allow easy grepping  and beautification by scripts.
 
 ### Usage
-The fields are: name (N), email (E), website(W), 
-PGP key ID and fingerprint (P), description (D), and
-snail-mail address (S).
+The fields are: name (N), email (E), website(W),PGP key ID and fingerprint (P), description (D), and snail-mail address (S).
 
 ### Example
-  N:
-  E:
-  W:
-  P:
-  D:
-  S:
+    N: 
+    E: 
+    W: 
+    P:
+    D: 
+    S: 
 
 Thanks.
+
 Yours
 Suriyaa Kudo
 
