@@ -27,6 +27,13 @@ Suriyaa Kudo
 
 ## Maintainers
 
+N: Suriyaa Kudo
+E: isc.suriyaa@gmail.com
+W: suriyaakudo.bplaced.net
+P: -
+D: Founder and maintainer of jdsf.isc
+S: -
+
 ## Website contributers
 
 
