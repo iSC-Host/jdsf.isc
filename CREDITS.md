@@ -31,7 +31,14 @@ N: Suriyaa Kudo
 E: isc.suriyaa@gmail.com
 W: suriyaakudo.bplaced.net
 P: -
-D: Founder and maintainer of jdsf.isc
+D: Founder and maintainer of jdsf.isc.
+S: -
+
+N: Aahash de Ruffy
+E: -
+W: aahash.me
+P: -
+D: Maintainer and founder of drawing of jdsf.isc.
 S: -
 
 ## Website contributers
