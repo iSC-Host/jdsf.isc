@@ -11,16 +11,17 @@ It is sorted by name and formatted to allow easy grepping  and beautification by
 The fields are: name (N), email (E), website(W),PGP key ID and fingerprint (P), description (D), and snail-mail address (S).
 
 ### Example
-    N: First name Surname
-    E: myemail@domain.isc
-    W: myhomepage.isc
-    P: XXXX
-    D: What I do!
+    N: First name Surname<br>
+    E: myemail@domain.isc<br>
+    W: myhomepage.isc<br>
+    P: XXXX<br>
+    D: What I do!<br>
     S: I live here!
 
-Thanks.
+/* Don't add your name here. The maintainers will add you here. */
 
-Yours
+
+Yours<br>
 Suriyaa Kudo
 
 ----
@@ -29,29 +30,26 @@ Suriyaa Kudo
 
 Who owns jdsf.isc :copyright::
 
-N: Suriyaa Kudo
-E: isc.suriyaa@gmail.com
-W: suriyaakudo.bplaced.net
-P: -
-D: Founder and maintainer of jdsf.isc.
+N: Suriyaa Kudo<br>
+E: isc.suriyaa@gmail.com<br>
+W: suriyaakudo.bplaced.net<br>
+P: -<br>
+D: Founder and maintainer of jdsf.isc.<br>
 S: -
 
-N: Aahash de Ruffy
-E: -
-W: aahash.me
-P: -
-D: Maintainer and founder of drawing of jdsf.isc.
+N: Aahash de Ruffy<br>
+E: -<br>
+W: aahash.me<br>
+P: -<br>
+D: Maintainer and founder of drawing of jdsf.isc.<br>
 S: -
 
 ----
 
 ## Website contributers
 
+-
 
-----
-----
-
-// Don't add your name here. The maintainers will add you here.
 
 ----
 :copyright: *2014-present* **iSC Host** :registered:
