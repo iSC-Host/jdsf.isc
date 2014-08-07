@@ -32,14 +32,14 @@ Who owns jdsf.isc :copyright::
 
 N: Suriyaa Kudo<br>
 E: isc.suriyaa@gmail.com<br>
-W: suriyaakudo.bplaced.net<br>
+W: [suriyaa.me](http://suriyaakudo.bplaced.net)<br>
 P: -<br>
 D: Founder and maintainer of jdsf.isc.<br>
 S: -
 
 N: Aahash de Ruffy<br>
 E: -<br>
-W: aahash.me<br>
+W: [aahash.me](http://aahash.isc)<br>
 P: -<br>
 D: Maintainer and founder of drawing of jdsf.isc.<br>
 S: -
