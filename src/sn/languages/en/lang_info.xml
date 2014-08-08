@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<language name="english">
+    <!-- Name of the language in the national-language-->
+    <name name="local">English</name>
+    <!-- Filename of the php-language file-->
+    <file>lang.en.php</file>
+    <date name="js">dd-mm-yy</date>
+    <!-- Date-Format for php visit: http://php.net/manual/de/function.date.php-->
+    <date name="php">F j, Y</date>
+    <!-- Date Format for MySQL visit: http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_date-format-->
+    <date name="mysql">%M %e, %Y</date>
+    <!-- Date +  time-Format for php visit: http://php.net/manual/de/function.date.php-->
+    <datetime name="php">F j, Y g:i a</datetime>
+    <!-- Date + time Format for MySQL visit: http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_date-format-->
+    <datetime name="mysql">%M %e, %Y %h:%i %p</datetime>
+    <!-- time-Format for php visit: http://php.net/manual/de/function.date.php-->
+    <time name="php">g:i a</time>
+    <!-- time Format for MySQL visit: http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_date-format-->
+    <time name="mysql">%h:%i %p</time>
+</language>

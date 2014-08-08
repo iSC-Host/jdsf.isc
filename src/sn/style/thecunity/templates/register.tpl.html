@@ -1,0 +1,148 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-$SCRIPT-REGISTER}
+<div id="terms_dialog" title="{-$register_terms}">{-$TERMS}</div>
+<div id="privacy_dialog" title="{-$register_privacy}">{-$PRIVACY}</div>
+<div id="info_content" style="position: relative;">
+    <div id="head_content">
+        <div id="cunity_description" style="padding-left: 20px;">
+            <div id="load" style="display: none;">
+                <img src="style/thecunity/img/load.gif"/>
+            </div>
+            <p>{-$register_check_fields}</p>
+        </div>
+    </div>    
+</div>
+<div id="inner_content" style="position: relative; text-align: left;">
+    <div id="left_sidebar">
+
+    </div>
+    <!--[if IE]>
+    <div id="cunity_info_box" style="height: auto; position: relative; top: 10px;">
+    <![endif]-->
+    <![if !IE]>
+    <div id="cunity_info_box" style="height: auto; top: -100px;padding-top:0px;">
+    <![endif]>
+        <div id="reg">
+        	<h2>{-$register}</h2>
+        	<form action="register.php" method="post" id="register_form" style="font-size:14px;width:480px">
+				<div class="box-main-a-1" style="margin-top: 10px;"></div>
+				<div class="box-main-a-2">
+			    <table border="0" width="480px">
+			        <colgroup>
+			            <col width="210px" />
+			            <col width="340px" />
+			        </colgroup>
+			        
+			        <tr>
+			            <td><label for="nickname">{-$profile_view_nick}<span class="required_star">*</span></label></td>
+			
+			            <td><input type="text" name="nickname" id="nickname" class="inp" onkeyup="checkField('nickname',$(this).val(),true)"/><span id="nickname_checked"></span></td>
+			        </tr>
+			        
+			        {-$NAMES}
+			
+			        <tr>
+			            <td><label for="mail1">E-Mail<span class="required_star">*</span></label></td>
+			
+			            <td><input type="text" name="mail1" id="mail1"  class="inp" onkeyup="checkField('mail',$(this).val(),true)"/><span  id="mail_checked"></span></td>
+			        </tr>
+			
+			        <tr>
+			            <td><label for="mail2">{-$register_rpt}<span class="required_star">*</span></label></td>
+			
+			            <td><input type="text" name="mail2" id="mail2"  class="inp" onkeyup="compareField($('#mail1').val(),$(this).val(),'mail2');"/><span  id="mail2_checked"></span></td>
+			        </tr>
+			
+			        <tr>
+			            <td><label for="pw1">{-$register_pw}<span class="required_star">*</span></label></td>
+			
+			            <td><input type="password" name="pw1" id="pw1"  class="inp" onkeyup="checkFieldLength($(this).val(),6,'pw1');"/><span  id="pw1_checked"></span></td>
+			        </tr>
+			
+			        <tr>
+			            <td><label for="pw2">{-$register_rpt}<span class="required_star">*</span></label></td>
+			
+			            <td><input type="password" name="pw2" id="pw2" onkeyup="compareField($('#pw1').val(),$(this).val(),'pw2');"/><span  id="pw2_checked"></span></td>
+			        </tr>
+			        
+			        <tr>
+			            <td>
+			                <label id="title_label">{-$register_address}<span class="required_star">*</span></label>
+			            </td>
+			            <td>    
+			            	<select name="sex" style="width:233px;padding:4px;">
+			            		<option value="1">{-$register_mr}</option>
+			            		<option value="0">{-$register_mrs}</option> 
+			            	</select>                              			
+			            </td>
+			        </tr>
+					<tr>
+						<td>
+							<label for="birthday">{-$register_birthday}<span class="required_star">*</span></label>
+						</td>
+						<td>
+							<select id="day" name="day" style="padding:4px;margin-left:0px">
+								{-$DAYS}
+							</select>
+							<select id="month" name="month" style="padding:4px">
+								{-$MONTHS}
+							</select>
+							<select id="year" name="year" style="padding:4px">
+								{-$YEARS}
+							</select>
+							<span id="birthday_checked"></span>
+						</td>
+					</tr>
+			        {-$NEW_FIELDS}
+			        <tr><td></td></tr>
+			        <tr>
+			            <td colspan="2"><input type="checkbox" id="terms" name="terms" value="yes" /> <label for="terms" id="terms_label">{-$register_accept} <a href="javascript: showPage('terms');" style="text-decoration: underline;">{-$register_terms}</a></label></td>
+			        </tr>
+			
+			        <tr>
+			            <td colspan="2"><input type="checkbox" id="privacy" name="privacy" value="yes"/> <label for="privacy" id="privacy_label">{-$register_accept} <a href="javascript: showPage('privacy');" style="text-decoration: underline;">{-$register_privacy}</a></label></td>
+			        </tr>
+			    </table>
+			    </div>
+			    <div class="box-main-a-3"></div>
+			    <div class="box-main-a-1" style="margin-top: 10px;"></div>
+				<div class="box-main-a-2" style="text-align:right">
+			    	<button class="jui-button" type="submit" name="subm" id="subReg" style="font-size: 15px;">{-$register_button}</button>
+			    </div>
+			    <div class="box-main-a-3"></div>
+			</form>    
+        </div>
+    </div>
+    <div id="main_content" style="height: 500px;">

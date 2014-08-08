@@ -1,0 +1,121 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-if LOGIN}
+{-$SCRIPT-BOTTOM_SEARCH}
+
+<div id="footpanel">
+
+<ul id="mainpanel">
+
+	<li><a href="index.php" class="home">Cunity <small>{-$home}</small></a></li>
+
+	<li><a href="profile.php" class="profile">{-$profile}<small>{-$profile}</small></a></li>
+
+	<li><a href="messages.php?c=inbox" class="messages">{-$messages}<small>{-$messages}</small></a></li>
+
+	<li><a href="galleries.php" class="album">{-$galleries}<small>{-$galleries}</small></a></li>
+	<li id="photoContentLoading" ></li>
+
+	<li><a href="fileshare.php" class="fileshare">{-$file_sharing}<small>{-$file_sharing}</small></a></li>
+	
+	<li id="searchpanel"><input type="text" id="searchbox" /><a  class="search">{-$search}<small>{-$search}</small></a></li>
+	<div id="display" class="subpanel">
+
+	<h3><span> &ndash; </span>{-$members_found}</h3>
+
+	<table id="membersFound" class="membersfound">
+
+	
+	</table>
+
+	</div>
+	
+	
+	
+	<li id="loadingContent" ></li>
+	
+	<div class="subpanel">
+
+	</div>
+
+	</li>
+	{-/if}
+    {-if chat}
+    {-$FRIENDSONLINE}
+
+	<li id="chatpanel"><a href="#" class="chat" id="friendscount">Chat (0)
+	</a>
+
+	<div class="subpanel">
+
+	<h3><span> &ndash; </span>{-$friends_online}</h3>
+
+	<ul id="friendsonline">
+
+		<li><span>{-$my_friends}</span></li>
+
+		<!--  {-$ONLINE}-->
+
+	</ul>
+	</div>
+	</li>
+	{-/if}
+{-if LOGIN}
+</ul>
+</div>
+{-/if}
+{-$SCRIPT-CONTACT}
+<div id="overall_footer">        
+<div class="padder footer_inner">
+<div style="float: left;">
+<form id="languageswitch" method="POST">
+    <img src="style/thecunity/img/{-$LANG}.png" style="display: inline-block; vertical-align: middle;"/>
+    <select style="display: inline-block; vertical-align: middle; margin-right: 10px; width: 125px;" name="languageswitch" onchange="document.getElementById('languageswitch').submit();">
+        <option value="en" {-$ENGLISH}>{-$english}</option>
+        <option value="de" {-$GERMAN}>{-$german}</option>
+    </select>
+</form>
+</div>
+<a href="pages.php?id=terms">{-$Terms}</a> | 
+<a href="pages.php?id=privacy">{-$Privacy}</a> | 
+<a href="pages.php?id=imprint">{-$Imprint}</a> | 
+<a href="javascript:contact();">{-$contact}</a><br />
+<p><span>Powered by </span><a href="http://www.cunity.net">CUNITY&reg;</a><span> - &copy; 2011 by Smart In Media</span><br/></p>
+
+</div>
+
+{-$SCRIPT-JSCRIPT_BOTTOM}
+
+</body>
+</html>

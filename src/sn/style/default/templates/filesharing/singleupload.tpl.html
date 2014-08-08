@@ -1,0 +1,72 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+       <fieldset>
+        <legend>{-$filesharing_options}</legend>
+        <button class="jui-button" onclick="location.href='fileshare.php?action=multiupload'">{-$filesharing_upload_multi_uploader}</button>
+        <button class="jui-button" onclick="location.href='fileshare.php'">{-$filesharing_upload_back}</button>
+    </fieldset>
+    <br />
+    <fieldset>
+        <legend><strong>{-$filesharing_space}</strong></legend>                
+        {-$PROGRESSBAR}                    
+    </fieldset>
+    <br />
+    <fieldset>
+        <legend><strong>{-$filesharing_upload_single_select}</strong></legend>
+        <form action="controllers/ajaxFileShareController.php" name="form_fu1" method="POST" target="ifu1" enctype="multipart/form-data">
+			<input id="fu1" name="fu" type="file"/>
+			<span id="fu1_sub"></span>
+			<input type="hidden" name="form" value="1"/>
+			<iframe id="ifu1" name="ifu1" style="display: none;"></iframe>
+		</form>
+
+		<form action="controllers/ajaxFileShareController.php" name="form_fu2" method="POST" target="ifu2" enctype="multipart/form-data">
+			<input id="fu2" name="fu" type="file"/>
+			<span id="fu2_sub"></span>
+			<input type="hidden" name="form" value="2"/>
+			<iframe id="ifu2" name="ifu2" style="display: none;"></iframe>
+		</form>
+
+		<form action="controllers/ajaxFileShareController.php" name="form_fu3" method="POST" target="ifu3" enctype="multipart/form-data">
+			<input id="fu3" name="fu" type="file"/>
+			<span id="fu3_sub"></span>
+			<input type="hidden" name="form" value="3"/>
+			<iframe id="ifu3" name="ifu3" style="display: none;"></iframe>
+		</form>
+    </fieldset>
+    <br />
+	<fieldset id="uploaded_files" style="display:none;">
+	    <legend><strong>Bisher hochgeladen</strong></legend>
+	</fieldset>
+	{-$SCRIPT-FILESHARE_SINGLEUPLOAD}

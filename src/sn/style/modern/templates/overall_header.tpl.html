@@ -1,0 +1,269 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   <!Doctype>
+<html>
+<head>
+<title>{-$TITLE}</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="description" content="{-$SLOGAN}"/>
+<link rel="stylesheet" type="text/css" href="style/default/styles.css" />
+<link rel="stylesheet" type="text/css" href="includes/jqueryNotifications/css/jquery_notification.css"/>
+<link rel="stylesheet" href="style/default/apprise.css" type="text/css" />
+<link rel="stylesheet" type="text/css" media="all" href="style/default/jqueryui/jqueryui.css"/>
+<script language="javascript" type="text/javascript" src="includes/jquery/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="includes/jqueryui/js/jquery-ui-1.8.7.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="includes/jqueryNotifications/js/jquery_notification_v.1.js"></script>
+{-if chat}
+<link type="text/css" rel="stylesheet" media="all" href="style/default/chat.css" />
+<link type="text/css" rel="stylesheet" media="all" href="style/default/screen.css" />
+<link type="text/css" href="includes/jScrollPane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<script type="text/javascript" src="includes/jScrollPane/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="includes/jScrollPane/jquery.jscrollpane.min.js"></script>
+{-$CHAT}
+{-/if}
+{-if LOGIN}
+<script language="javascript" type="text/javascript" src="includes/pinboard/jquery.watermarkinput.js"></script>
+<script language="javascript" type="text/javascript" src="includes/sticky/sticky.full.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="includes/sticky/sticky.full.css"/>
+{-$SCRIPT-MESSAGEBOX_HEAD}
+{-$SCRIPT-LITE}
+{-$SCRIPT-SEARCH}
+{-/if}
+{-$SCRIPT-APPRISE}
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    showNotification({});
+})
+var checkbox_path = 'style/modern/img/checkbox.png';
+var checkbox_filled_path = 'style/modern/img/checkbox_filled.png';
+
+function checkboxes()
+{
+    $("input[type=checkbox]").not('.styleless').not(':hidden').each(function(){
+        var el = this;
+        var cur_class = $(el).attr('class');
+        var cur_id = $(el).attr('id');
+        if(cur_id == '')
+        {
+            cur_id = Math.floor(Math.random());
+            $(el).attr('id', cur_id);
+        }
+        $(el)
+            .before('<img src="'+checkbox_path+'" class="'+cur_class+' checkbox_styled" id="'+cur_id+'-cb" />')
+            .hide();
+
+    })
+}
+
+$("document").ready(function(){
+
+    $(".checkbox_styled").live('click', function(){
+        var el = this;
+        var id = $(el).attr('id');
+        var i = id.split("-");
+        if($("#"+i[0]).is(':checked'))
+        {
+            $("#"+i[0]).removeAttr('checked');
+            $(el).attr('src', checkbox_path);
+        }
+        else
+        {
+            $("#"+i[0]).attr('checked', 'checked');
+            $(el).attr('src', checkbox_filled_path);
+        }
+    })
+
+    $("input[type=checkbox]").live('change', function(){
+        var el = this;
+        var id = $(el).attr('id');
+        if($(el).is(':checked'))
+        {
+            $("#"+id+"-cb").attr('src', checkbox_filled_path);
+        }
+        else
+        {
+            $("#"+id+"-cb").attr('src', checkbox_path);
+        }
+    })
+
+    $("h1").not('.h1_orig').each(function(){
+        var el = this;
+        var cont = $(el).html();
+        $(el)
+            .before('<span class="h1_wrap"><h1>'+cont+'</h1><img class="h1_inner_img" src="style/modern/img/h1_line.png"/></span>')
+            .remove();
+
+    })
+
+    window.setTimeout('checkboxes()', 400);
+})
+
+</script>
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    $(".left_main_list_text")
+        .live('mouseover', function(){
+            $(this).css("textDecoration", "underline");
+        })
+        .live('mouseout', function(){
+            $(this).css("textDecoration", "none");
+        });
+})
+</script>
+
+
+</head>
+
+
+<body>
+{-$IE_MESSAGE}
+<noscript><strong>{-$overall_header_attention}</strong>
+{-$overall_header_javascript} <a
+	href="http://www.google.com/support/bin/answer.py?answer=23852"
+	target="_blank"> {-$overall_header_here}</a>.</noscript>
+
+<div id="left_main_wrapper">                                                
+<link rel="stylesheet" type="text/css" href="style/modern/main_menu.css"/>
+<menu id="left_main_menu">
+{-if pinboard}
+<li class="left_main_list">
+    <a href="pinboard.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/newsfeed.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_pinboard}</span>
+    </a>
+</li>
+{-/if}
+{-if forums}
+<li class="left_main_list">
+    <a href="forums.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/forum.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_forums}</span>
+    </a>
+</li>
+{-/if}
+{-if fileshare}
+<li class="left_main_list">
+    <a href="fileshare.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/filesharing.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_fileshare}</span>
+    </a>
+</li>
+{-/if}
+<li class="left_main_list_seperator">&nbsp;</li>
+{-if LOGIN}
+<li class="left_main_list">
+    <a href="profile.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/user.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_profile}</span>
+    </a>
+</li>
+{-/if}
+{-if galleries}
+<li class="left_main_list">
+    <a href="galleries.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/gallery.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_gallery}</span>
+    </a>
+</li>
+{-/if}
+{-if messages}
+<li class="left_main_list">
+    <a href="messages.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/mail.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_messages_count}</span>
+    </a>
+</li>
+{-/if}
+{-if events}
+<li class="left_main_list">
+    <a href="events.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/calendar.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_events}</span>
+    </a>
+</li>
+{-/if}
+{-if friends}
+<li class="left_main_list">
+    <a href="friends.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/friends.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_friends}</span>
+    </a>
+</li>
+{-/if}
+{-if members}
+<li class="left_main_list">
+    <a href="members.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/users.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_users}</span>
+    </a>
+</li>
+{-/if}
+{-if ADMIN}
+<li class="left_main_list_seperator">&nbsp;</li>
+<li class="left_main_list" style="padding-right: 0px;">
+    <a href="./admin/index.php" class="left_main_list_link">
+        <span class="left_main_list_img_wrap">
+            <img src="style/modern/img/burn.png" class="left_main_list_img"/>
+        </span>
+        <span class="left_main_list_text">{-$menu_administration}</span>
+    </a>
+</li>
+{-/if}
+</menu>
+</div>
+<link href="style/modern/content.css" type="text/css" rel="stylesheet" />
+<div id="centered_main_wrapper">
+    <div id="centered_main_head">
+    <div id="content">
+    <div id="header">
+{-$HEADER}
+</div>

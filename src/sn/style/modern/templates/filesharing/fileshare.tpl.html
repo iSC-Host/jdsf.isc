@@ -1,0 +1,167 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   
+<link rel="stylesheet"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="includes/plupload/css/jquery.ui.plupload.css" type="text/css" />
+<!-- Thirdparty intialization scripts, needed for the Google Gears and BrowserPlus runtimes -->
+<script type="text/javascript" src="includes/plupload/js/gears_init.js"></script>
+<script type="text/javascript"
+	src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+
+<!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+<script type="text/javascript" src="includes/plupload/js/plupload.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.gears.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.silverlight.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.flash.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.browserplus.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.html4.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/plupload.html5.js"></script>
+<script type="text/javascript"
+	src="includes/plupload/js/jquery.ui.plupload.js"></script>
+{-$FILESHARE_SCRIPT}
+<h1>Filesharing</h1>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<ul class="button_list">    
+    <li onclick="location.href='fileshare.php?action=singleupload'">{-$filesharing_single_upload}</li>
+    <li onclick="location.href='fileshare.php?action=multiupload'">{-$filesharing_multi_upload}</li>
+</ul>    
+<!--Speicherplatz: {-$x}MB von {-$y}MB belegt<div id="progressbar" style="width:200px; height:15px"></div>
+<br/>
+  <script>
+  $(document).ready(function() {
+    $("#progressbar").progressbar({ value: {-$percentage} });
+  });
+  </script>-->
+<br />
+<h1 id="legendTitle">{-$filesharing_my_files}</h1>
+<div id="myFilesMultiMenu"></div>
+<table class="sample2" id="myFiles"></table>
+
+<h1 id="legendTitle2">{-$filesharing_shared_with_me}</h1>
+<table class="sample2" id="myShareFiles">
+
+</table>
+<div id="myFilesMultiMenuBottom"></div>
+          
+
+          
+<div id="divUploadHidden"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+
+<br />
+<fieldset><legend>{-$filesharing_upload_manager}</legend>
+<form id="uploadFileForm">
+<div id="uploader">
+<p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus
+or HTML5 support.</p>
+</div>
+</form>
+</fieldset>
+<fieldset><legend>{-$filesharing_options}</legend>
+<div style="align: right;"><input type=button id="Finished"
+	name="Finished" value="Return Home" /></div>
+</fieldset>
+<br />
+</div>
+<div id="divShareSingleFileHidden"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+<input type="button" id="Share" value="Share" /> <input type="button"
+	id="Cancel" value="Cancel" /></div>
+	
+	<br />
+<div id="divShareMultipleFileHidden"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+<input type="button" id="ShareMultiple" value="Share Multiple" /> <input type="button"
+	id="CancelShareMultiple" value="Cancel" /></div>
+
+
+<br />
+	
+<div id="divShowSingleFileShare"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+
+
+<fieldset><legend>{-$filesharing_infos}</legend> <br />
+<div id="informationTable"></div>
+<br />
+</fieldset>
+<br />
+<fieldset><legend>{-$filesharing_options}</legend>
+<div style="align: right;"><input type=button id="Finished2"
+	name="Finished2" value="Return Home" /></div>
+</fieldset>
+<br />
+</div>
+<div id="question"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+<br />
+Do you want to delete this file ? <input type="button" id="yes"
+	value="Yes" /> <input type="button" id="no" value="No" /> <br />
+<br />
+</div>
+<div id="questionDeleteMultipleFiles"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+<br />
+Do you want to delete these file ? <input type="button" id="yesMultiDelete"
+	value="Yes" /> <input type="button" id="noMultiDelete" value="No" /> <br />
+<br />
+</div>
+<div id="questionDownloadFile"
+	style="display: none; cursor: default; background-color: #FFFFCC">
+<br />
+<div id="clickDownload"><a id="downloadLink" href="download.php"
+	title="click here to download file">Please click here to get a
+download link</a></div>
+<br />
+<input type="button" id="noo" value="Return" /> <br />
+<br />
+</div>
+<div id="dimmer" style="display:none; z-index: 1000; border: medium none; margin: 0pt; padding: 0pt; width: 100%; height: 100%; top: 0pt; left: 0pt; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;" class="blockUI blockOverlay"></div>
+<div id="finished_box" style="display:none; z-index: 1001; position: fixed; padding: 0px; margin: 0px; width: 275px; top: 40%; left: 35%; text-align: center; color: rgb(0, 0, 0); border: 3px solid rgb(170, 170, 170); background-color: rgb(255, 255, 255); cursor: wait;" class="blockUI blockMsg blockPage"><div style="cursor: default; background-color: rgb(255, 255, 204);">
+<br>
+{-$galleries_upload_finished}
+<br><br>
+<input type="button" value="OK" id="finished_OK"><br>
+<br>
+</div></div>

@@ -1,0 +1,25 @@
+<tr id="fileRow-{-$FILEID}">
+    <td>
+        <input type="checkbox" name="state[]" class="state"  value="{-$FILEID}"/>
+    </td>
+    <td cellpadding="4" height="8px" colspan="1" title="{-$FILENAME}">
+        <a href="javascript: fileDetails({-$FILEID},0);">{-$FILENAME}</a>
+    </td>
+    <td style="color: #808080;">
+        {-$FILESIZE}
+    </td>
+    <td style="color: #808080;">
+        {-$TIME}
+    </td>
+    <td style="position: relative;">
+        <button class="jui-button" text="0" icon="ui-icon-triangle-1-s" onclick="showMenu('file_dropdown-{-$FILEID}')">{-$filesharing_options}</button>
+        <ul id="file_dropdown-{-$FILEID}" class="file-dropdown-menu ui-widget ui-widget-content ui-corner-all ui-menu" style="display: none; width: 130px; position: absolute; right: 10px; text-align: left; z-index: 999999;">
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="javascript:deleteFile({-$FILEID},0);">{-$filesharing_delete}</a>
+            </li>
+            <li class="ui-menu-item">
+                <a class="ui-corner-all" href="javascript:downloadFile({-$FILEID},0);">{-$filesharing_download}</a>
+            </li>
+        </ul>
+    </td>
+</tr>

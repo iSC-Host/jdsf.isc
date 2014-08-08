@@ -1,0 +1,182 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-$EVENT_SHOW_SCRIPT}
+<div id="event_show_head">
+    <div style="float: left;">
+    <img src="{-$EVENT_IMG}" class="event_show_img"/>    
+    {-if OWN_EVENT}
+    <ul>
+    <li class="edit_event_link" title="{-$events_edit_event}">
+        <img src="style/modern/img/edit_event.png" />
+        <span>{-$events_edit_event}</span>
+    </li>
+    <li class="edit_event_link" title="{-$events_delete_event}">
+        <img src="style/modern/img/fail.png" />
+        <a href="events.php?e={-$EVENT_ID}&d=1" style="text-decoration: none;" onclick="return delete_event();">{-$events_delete_event}</a>
+    </li>
+    </ul>
+    {-/if}
+    </div>
+    <input type="hidden" class="event_id" value="{-$EVENT_ID}"/>
+    <div id="event_show_right_head">
+    <h1 style="color: #000000; text-align: left;">{-$EVENT_NAME}</h1>
+    <div id="event_overview">
+        {-$PRIVACY}
+         - 
+        <span id="event_attend">{-$ATTENDING}</span>
+    </div>
+    <div id="event_privacy"></div>                    
+    </div>
+    <div class="clear"></div>
+</div>
+{-if OWN_EVENT}
+<div class="message_grey" style="display: none; position: relative;" id="edit_box">
+    <table class="new_event_table">
+        <tr>
+            <td class="event_info_label">{-$events_start}:</td>
+            <td class="event_info_value">
+                <div class="event_mini_cal" style="display: none; left: 66px; top:34px;" id="mini_cal_start">
+                </div>
+                <div class="event_cal_field" id="start">
+                    <span id="start_date">{-$START_DATE}</span>
+                    <input type="hidden" id="start_date_val" value="{-$START_DATE_EN}"/>
+                    <img src="style/modern/img/calendar.png" class="event_cal_img"/>
+                    <div class="clear"></div>
+                </div>
+                <select class="event_time_select" id="start_time_val">
+                    {-$TIMES_START}
+                </select>
+                <div class="clear"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="event_info_label">{-$events_end}:</td>
+            <td class="event_info_value">
+                <div class="event_mini_cal" style="display: none; left: 66px; top:60px;" id="mini_cal_end">
+                </div>
+                <div class="event_cal_field" id="end">
+                    <span id="end_date">{-$END_DATE}</span>
+                    <input type="hidden" id="end_date_val" value="{-$END_DATE_EN}"/>
+                    <img src="style/modern/img/calendar.png" class="event_cal_img"/>
+                    <div class="clear"></div>
+                </div>
+                <select class="event_time_select" id="end_time_val">
+                    {-$TIMES_END}
+                </select>
+                <div class="clear"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="event_info_label">{-$events_name}:</td>
+            <td class="event_info_value"><input class="event_info_text" id="new_event_name" value="{-$EVENT_NAME}" maxlength="100"/></td>
+        </tr>
+        <tr>
+            <td class="event_info_label">{-$events_place}:</td>
+            <td class="event_info_value"><input class="event_info_text" id="new_event_place" value="{-$PLACE}" maxlength="100"/></td>
+        </tr>
+        <tr>
+            <td class="event_info_label">{-$events_description}:</td>
+            <td class="event_info_value"><textarea class="event_info_textarea" id="new_event_info" maxlength="1000">{-$INFOS}</textarea></td>
+        </tr>
+        <tr>
+            <td class="event_info_label">{-$events_upload_image_edit}:</td>
+            <td class="event_info_value">
+                <form method="post" target="event_img_frame" enctype="multipart/form-data" id="event_img_form" name="event_img_form" action="controllers/ajaxEventsController.php?c=event_img&do=edit">
+                    <input type="file" class="event_info_file" name="event_image_file"/>
+                    <input type="hidden" name="event_id" value="{-$EVENT_ID}" class="event_id"/>
+                    <div class="event_info_file_load" style="display: none;"><img src="style/modern/img/load.gif" /></div>
+                </form>
+                
+            </td>
+        </tr>        
+        <tr>
+            <td class="event_info_label">{-$events_privacy}</td>
+            <td class="event_info_value">
+                <input name="privacy" id="privacy_closed" type="radio" {-$PRIVACY_CLOSED}/>
+                <label for="privacy_closed">{-$events_closed}</label>
+                <br />
+                <input name="privacy" id="privacy_public" type="radio" {-$PRIVACY_PUBLIC}/>
+                <label for="privacy_public">{-$events_public}</label>
+            </td>
+        </tr>
+    </table>
+    
+    <button class="jui-button" id="save_edit">{-$events_save}</button>
+</div>
+{-/if}
+<table>
+	<tr>
+		<td colspan="2" class="tab_headline">Infos</td>
+	</tr>
+	<tr>
+		<td class="tab_label">{-$events_time}</td>
+		<td class="tab_value">{-$TIME}</td>
+	</tr>
+	<tr>
+		<td class="tab_label">{-$events_place}</td>
+		<td class="tab_value">{-$PLACE}</td>
+	</tr>
+	<tr>
+        <td class="tab_label">{-$events_created_by}</td>
+        <td class="tab_value">{-$CREATED_BY}</td>
+    </tr>
+    <tr>
+		<td class="tab_label">{-$events_more_info}</td>
+		<td class="tab_value">{-$INFOS}</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="tab_spacing">&nbsp;</td>
+	</tr>
+</table>
+{-if SHOW_GUESTS}
+<div id="event_show_guest_wrap">
+    <div id="event_show_guest_list_header">
+        {-$events_guest_list}
+        {-$INVITE_LINK}        
+        <div class="clear"></div>
+    </div>
+    <div id="event_show_guest_menu">
+        <span id="3" class="guest_menu_item">{-$events_yes_rsvp}</span>
+        <span id="2" class="guest_menu_item">{-$events_maybe_rsvp}</span>
+        <span id="1" class="guest_menu_item">{-$events_no_rsvp}</span>
+        <span id="0" class="guest_menu_item">{-$events_sent_invitation}</span>        
+    </div>
+    <div id="event_show_guest_list"> 
+        {-$GUEST_LIST}
+    </div>
+</div>
+<iframe id="guest_frame" name="guest_frame" frameborder="0" scrolling="no" style="display: none;"></iframe>
+{-/if}
+{-$COMMENTS}

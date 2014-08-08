@@ -1,0 +1,106 @@
+{-$SCRIPT-REGISTER}
+<script>
+var tabs;
+$("document").ready(function(){
+    tabs = $("#tabs").tabs();
+})
+</script>
+<div id="tabs">
+	<ul>
+		<li><a href="#register-tab">{-$register_button}</a></li>
+		<li><a href="#terms-tab">{-$register_terms}</a></li>
+		<li><a href="#privacy-tab">{-$register_privacy}</a></li>
+	</ul>
+	<div id="terms-tab" style="background-color: #FFF;">
+		<p>{-$TERMS}</p>
+		<button class="jui-button" onclick="$('#tabs').tabs('select', 0); $('#agb').attr('checked', 'checked');">{-$register_accept_button}</button>
+	</div>
+	<div id="privacy-tab" style="background-color: #FFF;">
+		<p>{-$PRIVACY}</p>
+		<button class="jui-button" onclick="$('#tabs').tabs('select', 0); $('#privacy').attr('checked', 'checked');">{-$register_accept_button}</button>
+	</div>
+<div id="register-tab" style="background-color: #FFF;">
+<div id="load" style="display: none;">
+    <img src="style/default/img/load.gif"/>
+</div>
+{-$register_check_fields}
+<br />
+<div id="reg">
+<form action="register.php" method="post" id="register_form">
+    <table border="0">
+        <colgroup>
+            <col width="140px" />
+            <col width="250px" />
+        </colgroup>
+
+        <tr>
+            <td><label for="nickname">{-$profile_view_nick}<span class="required_star">*</span></label></td>
+
+            <td><input type="text" name="nickname" id="nickname" class="inp"/><span  id="nickname_ok"></span></td>
+        </tr>
+
+        <tr>
+            <td><label for="mail1">E-Mail<span class="required_star">*</span></label></td>
+
+            <td><input type="text" name="mail1" id="mail1"  class="inp"/><span  id="mail1_ok"></span></td>
+        </tr>
+
+        <tr>
+            <td><label for="mail2">{-$register_rpt}<span class="required_star">*</span></label></td>
+
+            <td><input type="text" name="mail2" id="mail2"  class="inp"/><span  id="mail2_ok"></span></td>
+        </tr>
+
+        <tr>
+            <td><label for="pw1">{-$register_pw}<span class="required_star">*</span></label></td>
+
+            <td><input type="password" name="pw1" id="pw1"  class="inp"/><span  id="pw1_ok"></span></td>
+        </tr>
+
+        <tr>
+            <td><label for="pw2">{-$register_rpt}<span class="required_star">*</span></label></td>
+
+            <td><input type="password" name="pw2" id="pw2" /><span  id="pw2_ok"></span></td>
+        </tr>
+
+        <tr>
+            <td>
+                <label id="title_label">{-$register_address}<span class="required_star">*</span></label>
+            </td>
+            <td>
+    				<input type="radio" value="1" name="sex" id="msr" class="sex"/><label for="msr">{-$register_mr}</label>
+    				<input type="radio" value="0" name="sex" id="mdm" class="sex"/><label for="mdm">{-$register_mrs}</label>
+                    <input type="hidden" name="title" id="title" value=""/>
+            </td>
+        </tr>
+
+        {-$NEW_FIELDS}
+
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="checkbox" id="register_age" name="register_age" value="yes" /> <label for="register_age" id="register_age_label">{-$register_age_iam}{-$register_age}{-$register_age_yearsold}</label></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="checkbox" id="agb" name="agb" value="yes" /> <label for="agb" id="agb_label">{-$register_accept} <a href="javascript: void(0);" onclick="$('#tabs').tabs('select', 1);">{-$register_terms}</a></label></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="checkbox" id="privacy" name="privacy" value="yes" /> <label for="privacy" id="privacy_label">{-$register_accept} <a href="javascript: void(0)" onclick="$('#tabs').tabs('select', 2);">{-$register_privacy}</a></label></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan="2"><input class="jui-button" type="submit" name="subm" value="{-$register_button}" id="subReg" /></td>
+        </tr>
+    </table>
+</form>
+</div>
+</div>
+</div>

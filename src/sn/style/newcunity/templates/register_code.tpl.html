@@ -1,0 +1,28 @@
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$register_code_please_enter}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+{-$MSG}
+<form action="register.php?c=register" method="post">
+    <div class="box-main-a-1"></div>
+    <div class="box-main-a-2 options-a-2">
+        <label for="code">{-$register_code_code}</label>
+        <br />
+        <input class="register_input" name="code" type="text" size="35"/>
+        <br />
+        <label for="m">{-$register_code_mail}</label>
+        <br />
+        <input class="register_input" name="m" type="text" size="35"/>        
+    </div>
+    <div class="box-main-a-3"></div>
+    
+    <div class="box-main-a-1" style="margin-top: 10px;"></div>
+    <div class="box-main-a-2 options-a-2">
+        <input class="jui-button" type="submit" value="{-$register_code_submit}" name="send" style="float: right;"/>
+    </div>
+    <div class="box-main-a-3"></div>    
+    
+</form>

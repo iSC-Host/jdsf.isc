@@ -1,0 +1,14 @@
+<div id="comments-{-$STATUS_ID}" style="padding: 2px; width: 500px; display: {-$DISPLAY}; margin-left: -50px; margin-top: 3px;">
+    <div style="display: inline-block; padding: 1px; float: left; margin-left: 4px;">
+        <img src="{-$AVATAR}" id="comment_avatar-{-$STATUS_ID}" style="height: 40px; width: 40px; visibility: hidden;"/>
+    </div>
+    <div style="display: inline-block; float: left;">
+    <textarea class="new_comment_area" name="comment" id="comment_area-{-$STATUS_ID}" style="width: 400px; height: 22px;"></textarea>
+    <div style="margin-top: 1px;display: none;" id="send_comment-{-$STATUS_ID}">    
+    <button class="jui-button" onclick="comment({-$STATUS_ID},{-$RESSOURCE_ID},'{-$STATUS_TYPE}');" disabled="disabled" name="comment" style="float: right;">{-$pinboard_comment}</button>
+    <img src="style/{-$STYLE}/img/loading.gif" style="float: right; margin: 7px; display: none;" id="send_comment_load-{-$STATUS_ID}" />
+    <div class="clear"></div>
+    </div>
+    </div>
+    <div class="clear"></div>
+</div>

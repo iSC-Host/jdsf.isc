@@ -1,0 +1,62 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-$MYFRIENDS_SCRIPT}
+<h1>{-$friends_my_friends}</h1>
+<ul class="button_list">
+<li style="font-size: 13px;"><a href="friends.php?c=invite">{-$friends_invite}</a></li>
+{-if OWN_FRIENDS}
+<li style="font-size: 13px;"><a href="friends.php?c=requests">{-$friends_requests}{-$REQUESTS}</a></li>
+{-/if}
+</ul>
+<h1>{-$friends_search}</h1>
+<table style="margin: 10px 0px; width: auto;">
+	<tr>
+		<td width="170px"><input id="searchFriend" type="text" /></td>
+		<td width="300px">
+        <select id="selectPartnerCunities">
+		    <option value="none">{-$friends_select_cu}</option>
+		</select>
+		<input id="SearchMembersOnPartner" type="button" value="{-$friends_Search}" class="jui-button"/>
+		<img src="style/default/img/loading.gif" id="search_load" style="display: none;" />
+        </td>
+	</tr>
+</table>
+<h1>{-$friends_my_friends}</h1>
+<div class="sample2" id="myFriends">
+
+</div>
+<div id="divLoadMoreStatus" style="display: none;" align="center">
+<img src="style/modern/img/load_big.gif" id="moreFriendsLoad" style="display: none; margin: 5px;"/>
+<input class="jui-button" type="button" id="loadMoreFriends" onclick="loadAllFriends();"  value="{-$friends_show_all}" />
+</div>

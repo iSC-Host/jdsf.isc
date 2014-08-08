@@ -1,0 +1,14 @@
+<div class="main_list_wrap {-$CLASS}" style="height: auto;" id="comment-{-$COMMENT_ID}">
+    <div class="main_list_img_wrap" style="width: 50px;">
+    <a href="profile.php?user={-$USERHASH}">{-$AVATAR}</a>
+    </div>
+    <div class="main_list_cont" style="width: 420px;">
+        <a href="profile.php?user={-$USERHASH}" class="main_list_small_name">{-$USERNAME}</a><br />
+        <div class="main_list_content">{-$COMMENT}</div>
+        <div class="main_list_status_bottom">
+            <span>{-$COMMENT_TIME}</span>
+        </div>
+    </div>
+        {-$DELETE}
+    <div class="clear"></div>
+</div>

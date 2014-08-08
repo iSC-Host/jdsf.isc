@@ -1,0 +1,153 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-$SCRIPT-EVENTS}
+<h1>Events</h1>
+<fieldset>
+<legend>{-$events_options}</legend>
+<button class="jui-button event_new_button" id="{-$today_date}" title="{-$today}">{-$events_add_event}</button>
+<button class="jui-button" onclick="location.href='events.php?c=requests'">{-$events_requests}{-$REQUESTS}</button>
+</fieldset>
+<div id="cal_wrapper">
+</div>
+<div id="events_list"></div>
+<div class="message_border" style="display: none; width: 870px; margin-left: -450px;" id="new_event_border">
+    <div class="message_window">
+        <div class="message_header">
+            <h4 class="message_header_head">{-$events_add_event}</h4>
+            <img src="style/default/img/del_mail.png" class="preview_close" style="float: right; cursor: pointer;" title="{-$events_close}"/>
+            <div class="clear"></div>
+        </div>
+        <div class="message_cont">
+            <input type="hidden" class="event_id" value=""/>
+            <div id="new_event_left_wrap">
+                <iframe frameborder="0" scrolling="no" name="event_img_frame" id="event_img_frame" src="style/default/img/no_profile_img.jpg">
+                </iframe>
+            </div>
+            <div id="guests_wrap" style="display: none;">
+                <form action="controllers/ajaxEventsController.php?c=add_guests" method="POST" target="guest_frame">
+                    <div id="guests_cont">
+                            {-$GUEST_LIST}
+                        <div class="clear"></div>
+                    </div>
+                    <input type="hidden" class="event_id" value="" name="event_id"/>
+                    <input class="jui-button" type="submit" id="back_info" value="{-$events_back_info}"/>
+                </form>
+            </div>
+            <div id="new_event_right_wrap">
+                <div class="message_red" style="display: none; margin: 10px;" id="no_name_error">{-$events_no_name}</div>
+                <table class="new_event_table">                                                                        
+                    <tr>
+                        <td class="event_info_label">{-$events_start}:</td>
+                        <td class="event_info_value">
+                            <div class="event_mini_cal" style="display: none; left: 320px; top:110px;" id="mini_cal_start">
+                            </div>
+                            <div class="event_cal_field" id="start">
+                                <span id="start_date">{-$TODAY}</span>
+                                <input type="hidden" id="start_date_val" value="{-$TODAY_EN}"/>
+                                <img src="style/default/img/calendar.png" class="event_cal_img"/>
+                                <div class="clear"></div>
+                            </div>
+                            <select class="event_time_select" id="start_time_val">
+                                {-$TIME}
+                            </select>
+                            <div class="clear"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_end}:</td>
+                        <td class="event_info_value">
+                            <div class="event_mini_cal" style="display: none; left: 320px; top:130px;" id="mini_cal_end">
+                            </div>
+                            <div class="event_cal_field" id="end">
+                                <span id="end_date">{-$TODAY}</span>
+                                <input type="hidden" id="end_date_val" value="{-$TODAY_EN}"/>
+                                <img src="style/default/img/calendar.png" class="event_cal_img"/>
+                                <div class="clear"></div>
+                            </div>
+                            <select class="event_time_select" id="end_time_val">
+                                {-$TIME}
+                            </select>
+                            <div class="clear"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_name}:</td>
+                        <td class="event_info_value"><input class="event_info_text" id="new_event_name"/></td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_place}:</td>
+                        <td class="event_info_value"><input class="event_info_text" id="new_event_place" /></td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_description}:</td>
+                        <td class="event_info_value"><textarea class="event_info_textarea" id="new_event_info"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_upload_image}:</td>
+                        <td class="event_info_value">
+                            <form method="post" target="event_img_frame" enctype="multipart/form-data" id="event_img_form" name="event_img_form" action="controllers/ajaxEventsController.php?c=event_img">
+                                <input type="file" class="event_info_file" name="event_image_file"/>
+                                <input type="hidden" name="event_id" value="" class="event_id"/>
+                                <div class="event_info_file_load" style="display: none;"><img src="style/default/img/load.gif" /></div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_invite_guests}</td>
+                        <td class="event_info_value">
+                            <input type="button" value="{-$events_invite_guests}" id="invite_guests"/>
+                            <span id="guests"><span id="guests_count">{-$events_no}</span>&nbsp;{-$events_guests}</span>
+                            <iframe id="guest_frame" name="guest_frame" frameborder="0" scrolling="no" style="display: none;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="event_info_label">{-$events_privacy}</td>
+                        <td class="event_info_value">
+                            <input name="privacy" id="privacy_closed" type="radio"/>
+                            <label for="privacy_closed">{-$events_closed}</label>
+                            <br />
+                            <input name="privacy" id="privacy_public" type="radio" checked="checked"/>
+                            <label for="privacy_public">{-$events_public}</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="message_footer">
+            <input type="button" value="{-$events_add_event}" name="save" id="add_event" class="jui-button" style="width: 180px;"/>
+            <input type="reset" value="{-$events_close}" class="jui-button preview_close" style="width: 180px;"/>
+        </div>
+    </div>
+</div>

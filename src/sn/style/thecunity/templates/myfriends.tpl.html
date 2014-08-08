@@ -1,0 +1,79 @@
+<!--
+########################################################################################
+## CUNITY(R) V1.0beta - An open source social network / "your private social network" ##
+########################################################################################
+##  Copyright (C) 2011 Smart In Media GmbH & Co. KG                                   ##
+## CUNITY(R) is a registered trademark of Dr. Martin R. Weihrauch                     ##
+##  http://www.cunity.net                                                             ##
+##                                                                                    ##
+########################################################################################
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or any later version.
+
+1. YOU MUST NOT CHANGE THE LICENSE FOR THE SOFTWARE OR ANY PARTS HEREOF! IT MUST REMAIN AGPL.
+2. YOU MUST NOT REMOVE THIS COPYRIGHT NOTES FROM ANY PARTS OF THIS SOFTWARE!
+3. NOTE THAT THIS SOFTWARE CONTAINS THIRD-PARTY-SOLUTIONS THAT MAY EVENTUALLY NOT FALL UNDER (A)GPL!
+4. PLEASE READ THE LICENSE OF THE CUNITY SOFTWARE CAREFULLY!
+
+	You should have received a copy of the GNU Affero General Public License
+    along with this program (under the folder LICENSE).
+	If not, see <http://www.gnu.org/licenses/>.
+
+   If your software can interact with users remotely through a computer network,
+   you have to make sure that it provides a way for users to get its source.
+   For example, if your program is a web application, its interface could display
+   a "Source" link that leads users to an archive of the code. There are many ways
+   you could offer source, and different solutions will be better for different programs;
+   see section 13 of the GNU Affero General Public License for the specific requirements. 
+   
+   #####################################################################################
+   -->
+   {-$SCRIPT-MYFRIENDS}
+<div id="info_content">
+    <div id="mini_profile">
+        <a href="profile.php"><img src="{-$AVATAR}" width="70px" height="70px" id="mini_profile_img"/></a>
+        <div id="mini_profile_info">
+            <div id="mini_profile_name"><a href="profile.php">{-$USERNAME}</a></div>
+            <span id="mini_profile_edit"><a href="profile.php?c=edit">{-$edit_profile}</a></span><br />
+            <span id="mini_profile_img"><a href="profile.php?c=edit&do=img">{-$edit_img}</a></span><br />
+        </div>
+    </div>
+    <div id="head_content">
+        <div style="padding-top: 40px;">
+            <table style="margin: 10px 0px; width: auto; font-size: 12px;">
+				<tr>
+					<td width="170px"><input id="searchFriend" type="text" style="padding:3.5px"/></td>
+					<td width="350px">
+					{-if $cunityconnected==true}
+			        <select id="searchOption" style="padding:3px">
+					    <option value="none">{-$friends_select_cu}</option>
+					    <option value="open">OpenCunity</option>
+					</select>
+					{-/if}
+					<button id="searchMember" class="jui-button" icon="ui-icon-search">{-$friends_search}</button>		
+					<img src="style/default/img/loading.gif" id="search_load" style="display: none;" />
+			        </td>
+				</tr>
+			</table>
+        </div>
+    </div>
+</div>
+<div id="inner_content">
+    <div id="left_sidebar">
+        <ul class="sidebar_menu" style="margin: 0px;">
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/invite_friends.png');"><a href="friends.php?c=invite">{-$friends_invite}</a></li>
+            {-if OWN_FRIENDS}
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/respond_request.png');"><a href="friends.php?c=requests">{-$friends_requests}{-$REQUESTS}</a></li>
+            {-/if}
+            <li class="sidebar_menu_item" style="background-image: url('style/thecunity/img/friends.png'); display: none;" id="friends_back"><a href="friends.php">{-$friends_my_friends}</a></li>
+        </ul>
+    </div>
+    <div id="main_content">        
+        <div class="sample2 friends_search_div" id="myFriends"></div><br />
+        <div align="center" id="divLoadMoreStatus" style="display: none;">
+            <img src="style/thecunity/img/load_big.gif" id="moreFriendsLoad" style="display: none; margin: 5px;"/>
+            <button class="jui-button" id="loadMoreFriends" onclick="loadAllFriends();">{-$friends_show_all}</button>
+        </div>

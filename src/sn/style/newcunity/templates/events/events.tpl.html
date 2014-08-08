@@ -1,0 +1,29 @@
+{-$SCRIPT-EVENTS}
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>Events</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+<div class="box-main-a-1"></div>
+<div class="box-main-a-2 options-a-2">
+    <button class="jui-button" onclick="location.href='events.php?c=new'" icon="ui-icon-plus">{-$events_add_event}</button>
+    <button class="jui-button" onclick="location.href='events.php?c=requests'" icon="ui-icon-help">{-$events_events_requests}{-$REQUESTS}</button>
+</div>
+<div class="box-main-a-3"></div>
+
+<div class="box-main-a-1" style="margin-top: 10px;"></div>
+<div class="box-main-a-2">
+    <div id="cal_wrapper"></div>
+</div>
+<div class="box-main-a-3"></div>
+<div class="bar" style="margin-top: 10px;">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$events_this_month}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>                                  
+
+<div id="events_list" style="display: none;"></div>

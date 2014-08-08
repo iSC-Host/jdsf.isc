@@ -1,0 +1,57 @@
+<div class="bar">
+	<div class="bar-sub-a"></div>
+	<div class="bar-sub-b">
+		<h1>{-$TITLE}</h1>
+	</div>
+	<div class="bar-sub-c"></div>
+</div>
+<div class="box-main-a-1"></div>
+<script type="text/javascript" src="includes/jGallery/jGallery.js"></script>
+<div class="box-main-a-2 options-a-2">
+<button class="jui-button" icon="ui-icon-triangle-1-w" onclick="location.href='galleries.php'" id="galleryback">{-$galleries_back}</button>
+{-if !$REMOTE_ALBUM}
+    {-if $OWN_GALLERY}
+        {-$SCRIPT-GALLERIES_ALBUM_SHOW_DEL}
+        {-if !$NOT_EDITABLE}
+        <button class="jui-button" icon="ui-icon-plus" onclick="location.href='galleries.php?c=upload&id={-$ALBUM_ID}'">{-$galleries_add_images}</button>
+        <button class="jui-button" icon="ui-icon-pencil"onclick="location.href='galleries.php?c=edit&id={-$ALBUM_ID}'">{-$galleries_edit}</button>
+        {-/if}
+        <button class="jui-button" icon="ui-icon-trash" onclick="delAlbum()">{-$galleries_del_album}</button>
+    {-elseif $ALL_OF_ALL}
+        <form action="galleries.php" name="sorting" method="get"
+        	style="float: right; margin-right: 20px;"><label for="sorting">{-$galleries_sorting}</label>
+        <select onchange="document.sorting.submit()" name="sort">
+        	<option value="none"{-$sortnone}>{-$galleries_sort_none}</option>
+        	<option value="users"{-$sortusers}>{-$galleries_sort_users}</option>
+        	<option value="album"{-$sortalbum}>{-$galleries_sort_albums}</option>
+        </select> <input type="hidden" value="show_album" name="c" />
+        <input type="hidden" value="000" name="id" /></form>
+        <br class="clear" />
+    {-elseif $GALLERY_ADMIN}
+    {-$SCRIPT-GALLERIES_ALBUM_SHOW_DEL_ADMIN}
+        <button class="jui-button" icon="ui-icon-closethick" onclick="delAlbumAdmin()">{-$galleries_del_album}</button>
+    {-/if}
+{-/if}
+</div>
+<div class="box-main-a-3"></div>
+{-if !$ALL_OF_ALL && $DESCRIPTION!=""}
+<div class="box-main-a-1" style="margin-top: 10px;"></div>
+   <div class="box-main-a-2">
+    {-$DESCRIPTION}
+   </div>
+<div class="box-main-a-3"></div>
+{-/if}
+
+    <div class="box-main-a-1" style="margin-top: 10px;"></div>
+    {-$SCRIPT-GALLERIES_ALBUM_SHOW_MORE_PHOTOS}
+    <div id="gallery" class="box-main-a-2">
+	{-if $ALL_OF_ALL} 
+	    {-$IMAGES} 
+	{-else}
+	    {-$IMAGES}
+	    {-if $MOREPHOTOS}
+    	<div id="morephotoslink" class="clear" style="text-align:center"><button class="jui-button" onclick="morePhotos('{-$ALBUM_ID}');">{-$galleries_more_photos}</button></div>
+    	{-/if}
+	{-/if}
+</div>
+<div class="box-main-a-3"></div>
