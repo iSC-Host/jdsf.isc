@@ -1,0 +1,78 @@
+<h3>{-$admin_overview_stats_overview}</h3>
+
+{-$INFOBOX}
+<!-- {-$LASTLOGIN} -->
+
+<table>
+	<tr>
+		<th colspan="2" class="tab_headline">{-$admin_overview_stats_user}</th>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_reg_users}</th>
+		<td class="padder tab_value">{-$USER_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">
+            {-$admin_overview_stats_not_activated_users}            
+        </th>
+		<td class="padder tab_value">{-$NOT_ACTIVATED_USER_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">
+            {-$admin_overview_stats_inactive_users}
+            <a class="info_link"><img src="style/default/img/info.gif" style="float: right;"/></a>
+            <span class="hidden info_box">{-$admin_overview_stats_inactive_info}</span>
+        </th>
+		<td class="padder tab_value">{-$INACTIVE_USER_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_restricted_users}</th>
+		<td class="padder tab_value">{-$BLOCKED_USER_COUNT}</td>
+	</tr>
+	<!-- 
+	<tr>
+		<th colspan="2" class="tab_headline">{-$admin_overview_stats_user_graph}</th>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_profile_img}</th>
+		<td class="padder tab_value">{-$PROFILE_IMGS_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_profile_size}</th>
+		<td class="padder tab_value">{-$PROFILE_IMGS_SIZE}</td>
+	</tr> -->
+	<tr>
+		<th colspan="2" class="tab_headline">{-$admin_overview_stats_gallery}</th>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_gallery_images}</th>
+		<td class="padder tab_value">{-$GALLERY_IMG_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_gallery_images_size}</th>
+		<td class="padder tab_value">{-$GALLERY_IMG_SIZE}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_gallery_albums}</th>
+		<td class="padder tab_value">{-$GALLERY_ALBUMS_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_gallery_albums_average}</th>
+		<td class="padder tab_value">{-$GALLERY_ALBUMS_AVERAGE}</td>
+	</tr>	
+	<tr>
+		<th colspan="2" class="tab_headline">{-$admin_overview_stats_forum}</th>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_forums}</th>
+		<td class="padder tab_value">{-$FORUMS_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_threads}</th>
+		<td class="padder tab_value">{-$THREAD_COUNT}</td>
+	</tr>
+	<tr>
+		<th class="padder tab_label">{-$admin_overview_stats_posts}</th>
+		<td class="padder tab_value">{-$POST_COUNT}</td>
+	</tr>
+</table>

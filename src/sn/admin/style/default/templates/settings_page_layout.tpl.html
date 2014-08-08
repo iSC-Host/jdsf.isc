@@ -1,0 +1,14 @@
+<h3>{-$admin_settings_land_page}</h3>
+{-$MSG}
+<script type="text/javascript" src="../includes/nicedit/nicEdit-latest.js"></script>
+<script> bkLib.onDomLoaded(function(){var myEditor = new nicEditor({fullPanel : true }).panelInstance('landing_body'); var myEditor2 = new nicEditor({fullPanel : true }).panelInstance('header_body');});</script>
+<h4 style="border-bottom: 1px solid black; width: 300px;">{-$admin_settings_header_edit}</h4>
+<p>{-$admin_settings_header_info}</p>
+<form method="POST" action="settings.php?c=page_layout">
+    <textarea name="header_body" id="header_body" style="width: 900px; height: 100px;">{-$HEADER}</textarea>
+    <h4 style="border-bottom: 1px solid black; width: 300px;">{-$admin_settings_land_page_edit}</h4>
+    <p>{-$admin_settings_land_page_info}</p>
+    <textarea name="landing_body" id="landing_body" rows="25" cols="70">{-$BODY}</textarea>
+    <p></p>
+    <input type="submit" value="{-$admin_settings_save}" name="save" class="jui-button"/>
+</form>

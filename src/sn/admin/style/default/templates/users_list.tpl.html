@@ -1,0 +1,115 @@
+<h3>{-$admin_users_user}</h3>
+{-$ACT_LIST}
+<p>{-$admin_users_all_users}</p>
+<img src="style/default/img/arrow-turn-down.png" style="margin-left: 19px; padding-top: 4px;"/>
+<button onclick="location.href = 'users.php?c=list&checkall=1';" class="jui-button">{-$admin_users_check_all}</button> - 
+<button onclick="location.href = 'users.php?c=list&checkall=0';" class="jui-button">{-$admin_users_check_none}</button>
+<p></p>
+<script language="javascript" type="text/javascript">
+$("document").ready(function(){
+    $(".edit_space").change(function(){
+        $.ajax({
+            url: "includes/ajaxUsers.php?do=space",
+            type: "POST",
+            data: {val:$(this).val(), id: $(this).attr('id')},
+            success: function()
+            {
+                $("#change_success").fadeIn();
+                $("#change_success").delay(500);
+                $("#change_success").fadeOut();
+            }
+        });
+    })
+    
+    $(".message_show").live('click',function(){
+        $(".message_border").fadeIn();
+    });
+    $(".message_hide").live('click',function(){
+        $(".message_border").fadeOut();
+    });
+    
+    $(".forum_radio").live('change', function(){
+        $("#del_forum").val($(this).val());
+    });
+    
+    $(".delete_user_link").click(function(){
+        var el = this;
+        $.ajax({
+            url: "includes/ajaxUsers.php?do=delete_cont",
+            type: "POST",
+            data: "id="+$(el).attr('id'),
+            success: function(data)
+            {
+                $(".message_cont").html(data);
+                $("#del_id").val($(el).attr('id'));
+            }
+        });
+    })
+    
+    $("#del_user").click(function(){
+        $.ajax({
+            url: "includes/ajaxUsers.php?do=delete_user",
+            type: "POST",
+            data: {id: $("#del_id").val(), forum: $("#del_forum").val()},
+            success: function(data)
+            {
+                $("#"+$("#del_id").val()).remove();
+                $(".message_border").fadeOut();
+            }
+        });
+    })    
+})
+
+</script>
+<div id="change_success" style="display: none;">
+    <div id="change_success_inner">
+        <img src="style/default/img/check.png"/>{-$admin_registration_saved_changes}
+    </div>
+</div>
+<form action="users.php?c=list" method="POST">
+<table border="1" id="user_table">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>#</th>
+            <th>{-$admin_users_nickname}</th>
+            <th>{-$admin_users_email}</th>
+            <th>{-$admin_users_reg_date}</th>
+            <th>{-$admin_users_last_ip}</th>
+            <th>{-$admin_users_status}</th>
+            <th><span style="float: left;">{-$admin_users_space}(MB)</span>
+            <a class="info_link"><img src="style/default/img/info.gif" style="float: right;"/></a>
+            <span class="hidden info_box">{-$admin_users_space_info}</span>
+            <div class="clear"></div>
+            </th>
+            
+            <th colspan="4">{-$admin_users_action}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {-$USER_LIST}
+    </tbody>
+</table>
+<p></p>
+<img src="style/default/img/arrow-turn.png" style="margin-left: 19px;"/> 
+<input class="jui-button" type="submit" value="{-$admin_users_mail_marked}" name="mailMarked" style="width: auto;"/> - 
+<input class="jui-button" type="submit" value="{-$admin_users_set_active_marked}" name="activeMarked" style="width: auto;"/> - 
+<input class="jui-button" type="submit" value="{-$admin_users_set_inactive_marked}" name="inactiveMarked" style="width: auto;"/>
+</form>
+<div class="message_border" style="display: none;">
+    <div class="message_window">
+        <div class="message_header">
+            <h4 style="float: left;">{-$admin_users_delete_user}</h4>
+            <img src="style/default/img/close.png" class="message_hide" style="float: right; cursor: pointer;" title="{-$admin_users_abort}"/>
+            <div class="clear"></div>
+        </div>
+        <div class="message_cont">            
+        </div>
+        <div class="message_footer">
+            <input type="hidden" id="del_id"/>
+            <input type="hidden" id="del_forum" value="no"/>
+            <input type="submit" id="del_user" value="{-$admin_users_delete_submit}" class="jui-button"/>
+            <input type="reset" class="message_hide jui-button" value="{-$admin_users_abort}"/>
+        </div>
+    </div>
+</div>

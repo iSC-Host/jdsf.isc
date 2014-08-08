@@ -1,0 +1,13 @@
+<script type="text/javascript" src="../includes/nicedit/nicEdit-latest.js"></script><script> bkLib.onDomLoaded(function(){var myEditor = new nicEditor({fullPanel : true }).panelInstance('imprint');});</script>
+<form method="POST" action="settings.php?c=pages">
+{-$admin_pages_title_terms}: <input name="terms_title" type="text" value="{-$terms_title}"><br>
+<textarea name="terms" cols="50" rows="10">{-$terms}</textarea>
+<br>
+<br>
+{-$admin_pages_title_privacy}: <input name="privacy_title" type="text" value="{-$privacy_title}"><br>
+<textarea name="privacy" cols="50" rows="10">{-$privacy}</textarea>
+<br><br>
+{-$admin_pages_title_imprint}: <input name="imprint_title" type="text" value="{-$imprint_title}"><br>
+<textarea id="imprint" name="imprint" cols="50" rows="10">{-$imprint}</textarea><br>
+<input type="submit" value="{-$admin_settings_save}" name="save" class="jui-button">
+</form>
