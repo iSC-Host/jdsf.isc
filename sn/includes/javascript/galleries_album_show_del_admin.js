@@ -1,1 +1,0 @@
-function delAlbumAdmin() {apprise('{-$galleries_del_album_admin_confirm}',{verify: true},function(conf){if(conf == true)location.href = 'galleries.php?c=delete_album&id={-$ALBUM_ID}';});}
