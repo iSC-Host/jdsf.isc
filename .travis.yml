@@ -1,8 +1,8 @@
-language: node_js
-node_js:
-    - "0.10"
-before_script:
-    - travis_retry npm install -g grunt-cli
+language: ruby
+script: "./script/cibuild"
+notifications:
+email: false
 branches:
-    except:
-        - server-content
+only:
+- gh-pages
+- /.*/
