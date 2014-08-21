@@ -1,0 +1,5 @@
+<!isc
+isc(info);
+isc(platform):iSCOS:Server;
+isc(devices):Server;
+!>
