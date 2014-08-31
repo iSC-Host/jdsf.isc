@@ -1,0 +1,18 @@
+{
+"name": "jdsf.isc",
+"version": "1.0",
+"homepage": "http://isc-host.github.io/jdsf.isc",
+"authors": [
+"iSC Group",
+"Suriyaa Kudo <isc.suriyaa@gmail.com> (http://suriyaakudo.bplaced.net)",
+"iSC Host"
+],
+"description": "The official website of "The Jack's Dogs Family"",
+"main": "index.html",
+"license": "Apache v2",
+"dependencies": {
+"jquery": "~1.11.0",
+"octicons": "~2.1.1",
+"moment": "~2.8.2"
+}
+}
