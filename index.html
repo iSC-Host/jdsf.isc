@@ -1,16 +1,30 @@
-<!doctype html>
-<html class="no-js" lang="en_US">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- REDIRECT -->
-<meta http-equiv="refresh" content="0; url=http://isc-host.github.io/jdsf.isc/src/" />
-</head>
-<body>
-<!-- START -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>famo.us App</title>
+        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-REDIRECT...
+        <!-- shims for backwards compatibility -->
+        <script type="text/javascript" src="http://code.famo.us/lib/functionPrototypeBind.js"></script>
+        <script type="text/javascript" src="http://code.famo.us/lib/classList.js"></script>
+        <script type="text/javascript" src="http://code.famo.us/lib/requestAnimationFrame.js"></script>
 
-<!-- END -->
-</body>
+        <!-- module loader -->
+        <script type="text/javascript" src="http://code.famo.us/lib/require.js"></script>
+
+        <!-- famous -->
+        <link rel="stylesheet" type="text/css" href="http://code.famo.us/famous/0.2/famous.css" />
+        <script type="text/javascript" src="http://code.famo.us/famous/0.2/famous.min.js"></script>
+
+        <!-- app code -->
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <script type="text/javascript">
+            require.config({baseUrl: 'src/'});
+            require(['main']);
+        </script>
+    </head>
+    <body></body>
 </html>
