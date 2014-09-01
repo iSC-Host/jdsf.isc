@@ -11,7 +11,7 @@ define(function(require, exports, module) {
     // your app here
     var logo = new ImageSurface({
         size: [200, 200],
-        content: 'http://code.famo.us/assets/famous_logo.svg',
+        content: 'https://raw.githubusercontent.com/iSC-Host/jdsf.isc/gh-pages/src/assets/img/redirect/gear.png',
         classes: ['double-sided']
     });
 
