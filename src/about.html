@@ -46,6 +46,17 @@
             <link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+            <!-- jQuery UI Dialog -->
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+                <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+                <link rel="stylesheet" href="/resources/demos/style.css">
+
+                <script>
+                    $(function() {
+                    $( "#dialog" ).dialog();
+                    });
+                </script>
 
     <!-- BOWER -->
         <!-- Moment.js -->
@@ -161,8 +172,8 @@
                     <a class="btn btn-alt"
                        href="#authors"
                        data-ga-category="Outbound links"
-                       data-ga-action="Start tour!"
-                       data-ga-label="Start tour!">
+                       data-ga-action="Start the tour!"
+                       data-ga-label="Start the tour!">
                         Start tour!
                     </a>
                 </div>
@@ -176,6 +187,54 @@
 
                     <p>INFORMATIONS here!!!</p>
 
+                <div class="cta-option">
+                    <a class="btn btn-alt"
+                       href="#timeline"
+                       data-ga-category="Outbound links"
+                       data-ga-action="View the Timeline!"
+                       data-ga-label="View the Timeline!">
+                        View the Timeline!
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<hr>
+
+        <div class="site-section">
+            <div class="container">
+                <h2><a name="timeline">History</a></h2>
+
+                    <p>INFORMATIONS here!!!</p>
+
+                <div class="cta-option">
+                    <a class="btn btn-alt"
+                       href="#characters"
+                       data-ga-category="Outbound links"
+                       data-ga-action="Learn how the characters have been invented."
+                       data-ga-label="Learn how the characters have been invented.">
+                        Learn how the characters have been invented.
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<hr>
+
+        <div class="site-section">
+            <div class="container">
+                <h2><a name="characters">Characters</a></h2>
+
+                    <p>INFORMATIONS here!!!</p>
+
+                <div class="cta-option" id="dialog" title="Basic dialog">
+                    <a class="btn btn-alt"
+                       data-ga-category="Outbound links"
+                       data-ga-action="Finished"
+                       data-ga-label="Finished">
+                        Congratulation! You're finished. Go back to the top.
+                    </a>
+                </div>
             </div>
         </div>
 
