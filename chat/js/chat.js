@@ -5,7 +5,7 @@ $(document).ready(function() {
   *
   */
 
-  var messagesRef = new Firebase('https://chatlycc.firebaseio.com/');
+  var messagesRef = new Firebase('https://jdsf-chat.firebaseio.com/');
 
 
   /*
