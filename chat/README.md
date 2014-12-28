@@ -3,9 +3,9 @@ Chatly's Cloud Chat
 
 **Chatly's Cloud Chat** is a Realtime app site powered by [Firebase](https://www.firebase.com/) and hosted by [iSC Host](https://www.host.isc/) and [GitHub](https://github.com/).
 
-Start now chating under [https:///cloud.chatly.isc/](https://isc-host.github.io/cloud.chatly.isc/)!
+Start now chating under [https:///cloud.chatly.isc/](https://isc-host.github.io/jdsf.isc/chat/)!
 
-![Preview of an example Cloud Chat](http://firebase.github.io/cloud-chat/images/demo.jpg)(http://isc-host.github.io/cloud.chatly.isc/)
+![Preview of an example Cloud Chat](http://firebase.github.io/cloud-chat/images/demo.jpg)(http://isc-host.github.io/jdsf.isc/chat/)
 
 # Requirements
 * [gulp](http://gulpjs.com/) for build process!
