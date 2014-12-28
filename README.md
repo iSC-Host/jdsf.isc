@@ -1,7 +1,11 @@
-﻿"The Jack's Dogs Family" website
-========
+["The Jack's Dogs Family" website](http://www.jacks-dogs-family.isc/)
+====
 
-## [Visit the site!!!](http://www.jacks-dogs-family.isc/)
+## Status
+![iSC Host Repository](https://img.shields.io/badge/serverGems Repository-RubyGems-yellow.svg?style=flat) ![Version](https://img.shields.io/badge/Version-1.0-blue.svg?style=flat) ![Git CI Build Status](http://img.shields.io/badge/Git CI Build Status-passed-green.svg?style=flat) ![Travis CI Build Status](http://img.shields.io/travis/iSC-Host/jdsf.isc.svg?style=flat)
+
+[gem]: https://servergems.org/gems/RubyGems
+[travis]: http://travis-ci.org/serverGems/RubyGems
 
 ----
 
@@ -10,6 +14,8 @@
 "The Jack's Dogs Family" website is a professional, modern HTML5 website hosted by iSC Host
 and founded by [Suriyaa Kudo](https://github.com/SuriyaaKudoIsc).
 The source was created by the founder and the GitHub community.
+
+----
 
 ### Project
 This project is the product of many years of iterative development and combined
@@ -51,6 +57,8 @@ Also it includes this softwares for all visitors and fans:
 * [PHPFreeChat](http://www.phpfreechat.net/) (A popular PHP-based chat)
 * [YOURLS](http://yourls.org/) (A popular (Own) URL Shortener)
 
+----
+
 ## Requirements
 
 ### Server
@@ -58,17 +66,20 @@ Also it includes this softwares for all visitors and fans:
 * [Apache](https://httpd.apache.org/)
 * [NAS](http://www.freenas.org/)
 
+----
 
 ## Contributing
 
 Anyone and everyone is welcome to [contribute](CONTRIBUTING.md).
 Many developers have helped make "The Jack's Dogs Family" website what it is today.
 
+----
+
 ## Authors
 | [![twitter/SuriyaaKudoIsc](https://secure.gravatar.com/avatar/fdf96ca751e2e9d247b77d95e6f70da9?s=64)](https://twitter.com/SuriyaaKudoIsc "Follow @SuriyaaKudoIsc on Twitter") | [![IMG](LINK)](LINK "MESSAGE") | [![IMG](LINK)](LINK "MESSAGE") | [![IMG](LINK)](LINK "MESSAGE") |
 |---|---|---|---|
 | [Suriyaa Kudo](http://suriyaakudo.bplaced.net/) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) |
 
-----
 
-(c) *2014-present* **iSC Host**
+----
+(c) *2014-present* **iSC Host & ACS**
