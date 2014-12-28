@@ -1,28 +1,29 @@
 {
-  "name": "cloud.chatly.isc",
+  "name": "jdsf.isc",
   "version": "1.0.0",
-  "description": "Cloud Chat App with Firebase",
+  "description": "Cloud Chat App with Firebase for jdsf.isc",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iSC-Host/cloud.chatly.isc.git"
+    "url": "https://github.com/iSC-Host/jdsf.isc.git"
   },
   "keywords": [
     "Chatly",
     "Cloud Chat App",
     "Firebase",
     "Chat",
-    "Cloud"
+    "Cloud",
+    "jdsf.isc"
   ],
   "author": "Suriyaa Kudo, Chatly (iSC Group) & Alex Wolfe, Firebase Inc. (Google)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iSC-Host/cloud.chatly.isc/issues"
+    "url": "https://github.com/iSC-Host/jdsf.isc/issues"
   },
-  "homepage": "https://github.com/iSC-Host/cloud.chatly.isc",
+  "homepage": "https://github.com/iSC-Host/jdsf.isc",
   "devDependencies": {
     "gulp": "^3.8.9",
     "gulp-autoprefixer": "^1.0.1",
