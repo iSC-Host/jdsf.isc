@@ -60,7 +60,7 @@ gulp.task('watch', function() {
 */
 gulp.task('connect', function() {
   connect.server({
-    root: '.',
+    root: 'chat',
     port: 8000,
     livereload: true
   });
