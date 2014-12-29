@@ -1,5 +1,6 @@
+# Espeñiol's robots.txt file
 # robotstxt.org
 
-# Allow crawling of all content
+# Espeñiol allows bots crawling of our content! ;-)
 User-agent: *
 Allow: /
