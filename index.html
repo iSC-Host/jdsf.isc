@@ -37,9 +37,15 @@
         <!-- GitHub Octicons -->
             <link rel="stylesheet" href="assets/vendor/octicons/octicons/octicons.css">
 
+        <!-- NProgress -->
+            <link rel='stylesheet' href='http://ricostacruz.com/nprogress/nprogress.css'/>
+
     <!-- SCRIPT(S) -->
         <!-- Modernizr -->
             <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+
+        <!-- NProgress -->
+            <script src='http://ricostacruz.com/nprogress/nprogress.js'></script>
 
     <!-- COMPONENT(S) -->
         <!-- jQuery -->
@@ -359,6 +365,19 @@
         ga('send', 'pageview');
 
         </script>
+
+
+<script>
+NProgress.start();
+setTimeout(function() { NProgress.done(); }, 1000);
+
+$("#index").click(function() { NProgress.start(); });
+$("#comics").click(function() { NProgress.start(); });
+$("#videos").click(function() { NProgress.start(); });
+$("#characters").click(function() { NProgress.start(); });
+$("#about").click(function() { NProgress.start(); });
+$("#contact").click(function() { NProgress.start(); });
+</script>
 
 <!-- SCRIPT END -->
     </body>
