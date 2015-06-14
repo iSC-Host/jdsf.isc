@@ -3,4 +3,4 @@
 
 # Espeñiol allows bots crawling of our content! ;-)
 User-agent: *
-Allow: /
+Disallow: /
