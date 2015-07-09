@@ -11,8 +11,8 @@
 
 ## About
 
-"The Jack's Dogs Family" website is a professional, modern HTML5 website hosted by iSC Host
-and founded by [Suriyaa Kudo](https://github.com/SuriyaaKudoIsc).
+"**The Jack's Dogs Family**" website is a professional, modern HTML5 website hosted by iSC Host
+and founded by [Suriyaa Kudo](https://bit.ly/Suriyaa).
 The source was created by the founder and the GitHub community.
 
 ----
