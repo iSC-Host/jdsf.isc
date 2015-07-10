@@ -192,19 +192,19 @@ Download files from the internet via grunt:
 ### [grunt-html-validation](https://www.npmjs.com/package/grunt-html-validation)
 W3C html validation grunt plugin:
 
-npm install grunt-html-validation --save-dev
+    npm install grunt-html-validation --save-dev
 
 
 ### [grunt-rename](https://www.npmjs.com/package/grunt-rename)
 Move and/or rename files:
 
-npm install rename --save-dev
+    npm install rename --save-dev
 
 
 ### [grunt-http-server](https://www.npmjs.com/package/grunt-http-server)
 Grunt static http server task:
 
-npm install grunt-http-server --save-dev
+    npm install grunt-http-server --save-dev
 
 
 ### [grunt](https://www.npmjs.com/package/grunt-clear)
