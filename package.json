@@ -1,0 +1,31 @@
+{
+  "name": "jdsf.isc",
+  "version": "1.0.0",
+  "description": "The official website of \"The Jack's Dogs Family\".",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSC-Host/jdsf.isc.git"
+  },
+  "keywords": [
+    "jdsf",
+    "jdsf.isc",
+    "The",
+    "Jack's",
+    "Dogs",
+    "Family",
+    "official",
+    "website",
+    "official",
+    "website"
+  ],
+  "author": "Suriyaa Kudo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iSC-Host/jdsf.isc/issues"
+  },
+  "homepage": "https://github.com/iSC-Host/jdsf.isc#readme"
+}
