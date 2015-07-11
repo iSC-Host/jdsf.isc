@@ -87,7 +87,7 @@ Grunt plugin that lets you break up your Gruntfile config by task:
     npm install load-config --save-dev
 
 
-### [grunt-contrib-imagemin](https://www.npmjs.com/package/grunt-contrib-imagemin)
+### :warning: [grunt-contrib-imagemin](https://www.npmjs.com/package/grunt-contrib-imagemin)
 Minify images:
 
     npm install grunt-contrib-imagemin --save-dev
