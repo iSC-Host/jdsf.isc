@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/iSC-Host/jdsf.isc/issues"
   },
-  "homepage": "https://github.com/iSC-Host/jdsf.isc#readme"
+  "homepage": "https://github.com/iSC-Host/jdsf.isc#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
