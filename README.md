@@ -80,6 +80,11 @@ Many developers have helped make "The Jack's Dogs Family" website what it is tod
 |---|---|---|---|
 | [Suriyaa Kudo](http://suriyaakudo.bplaced.net/) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) | [NAME](HOMEPAGE) |
 
+----
+
+## Thanks to
+* GitHub community
+* and other contributors
 
 ----
 (c) *2014-present* **iSC Host & ACS**
