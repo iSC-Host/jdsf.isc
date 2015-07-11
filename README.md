@@ -83,8 +83,15 @@ Many developers have helped make "The Jack's Dogs Family" website what it is tod
 ----
 
 ## Thanks to
+* VIA Entertainment
+* ACS Films
+* iSC Press
+* ACS Mission Press
 * GitHub community
-* and other contributors
+* Node.js community
+* Node Package Manager (npm) community
+* Grunt.js community
+* and all other contributors
 
 ----
 (c) *2014-present* **iSC Host & ACS**
