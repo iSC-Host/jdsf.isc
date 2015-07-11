@@ -57,10 +57,10 @@ Start a connect web server:
     npm install grunt-contrib-connect --save-dev
 
 
-### [grunt-contrib-concurrent](https://www.npmjs.com/package/grunt-concurrent)
+### [grunt-concurrent](https://www.npmjs.com/package/grunt-concurrent)
 Run grunt tasks concurrently:
 
-    npm install grunt-contrib-concurrent --save-dev
+    npm install grunt-concurrent --save-dev
 
 
 ### [grunt-contrib-cssmin](https://www.npmjs.com/package/grunt-contrib-cssmin)
