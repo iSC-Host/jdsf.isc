@@ -105,7 +105,7 @@ Run shell commands:
     npm install grunt-shell --save-dev
 
 
-### [main-bower-files](https://www.npmjs.com/package/main-bower-files)
+### :warning: [main-bower-files](https://www.npmjs.com/package/main-bower-files)
 Get main files from your installed bower packages:
 
     npm install main-bower-files --save-dev
