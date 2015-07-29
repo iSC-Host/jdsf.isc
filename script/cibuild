@@ -1,6 +1,0 @@
-#! /bin/bash
-
-script/bootstrap
-script/server
-
-set -e
