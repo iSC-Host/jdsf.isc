@@ -87,34 +87,25 @@
 } 
 
  #Buton 
-{ 
-	 left: 527px; 
-	 top: 72px; 
-	 position: absolute; 
-	 width: 142px;
-	 height: 42px;
-	 z-index:8;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #LiveChat 
-{ 
-	 left: 572px; 
-	 top: 87px; 
-	 position: absolute; 
-	 width: 63px;
-	 height: 12px;
-	 z-index:9;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #SpeechBubbles 
-{ 
-	 left: 545px; 
-	 top: 86px; 
-	 position: absolute; 
-	 width: 18px;
-	 height: 15px;
-	 z-index:10;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #Buttoncopy 
 {
@@ -174,34 +165,25 @@
 } 
 
  #Butoncopy 
-{ 
-	 left: 527px; 
-	 top: 143px; 
-	 position: absolute; 
-	 width: 142px;
-	 height: 42px;
-	 z-index:17;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #LiveChat_0 
-{ 
-	 left: 572px; 
-	 top: 158px; 
-	 position: absolute; 
-	 width: 63px;
-	 height: 12px;
-	 z-index:18;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #SpeechBubblescopy 
-{ 
-	 left: 545px; 
-	 top: 157px; 
-	 position: absolute; 
-	 width: 18px;
-	 height: 15px;
-	 z-index:19;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #LightBackground 
 { 
@@ -274,34 +256,25 @@
 } 
 
  #Butoncopy2 
-{ 
-	 left: 527px; 
-	 top: 328px; 
-	 position: absolute; 
-	 width: 142px;
-	 height: 42px;
-	 z-index:27;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #LiveChatcopy 
-{ 
-	 left: 572px; 
-	 top: 343px; 
-	 position: absolute; 
-	 width: 63px;
-	 height: 12px;
-	 z-index:28;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #SpeechBubblescopy2 
-{ 
-	 left: 545px; 
-	 top: 342px; 
-	 position: absolute; 
-	 width: 18px;
-	 height: 15px;
-	 z-index:29;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #Buttoncopy2_1 
 { 
@@ -364,31 +337,22 @@
 } 
 
  #Butoncopy2_0 
-{ 
-	 left: 527px; 
-	 top: 399px; 
-	 position: absolute; 
-	 width: 142px;
-	 height: 42px;
-	 z-index:36;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #LiveChatcopy_0 
-{ 
-	 left: 572px; 
-	 top: 414px; 
-	 position: absolute; 
-	 width: 63px;
-	 height: 12px;
-	 z-index:37;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
 
  #SpeechBubblescopy2_0 
-{ 
-	 left: 545px; 
-	 top: 413px; 
-	 position: absolute; 
-	 width: 18px;
-	 height: 15px;
-	 z-index:38;
-} 
+{
+    position: fixed;
+    bottom: 100;
+    right: 0;
+}
