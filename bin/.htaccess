@@ -8,11 +8,11 @@
 # ----------------------------------------------------------------------
 # ERROR documents
 # ----------------------------------------------------------------------
-ErrorDocument 400 /_errors/badrequest.html
-ErrorDocument 401 /_errors/authreqd.html
-ErrorDocument 403 /_errors/forbid.html
-ErrorDocument 404 /_errors/notfound.html
-ErrorDocument 500 /_errors/server.html
+ErrorDocument 400 /errors/badrequest.html
+ErrorDocument 401 /errors/authreqd.html
+ErrorDocument 403 /errors/forbid.html
+ErrorDocument 404 /errors/notfound.html
+ErrorDocument 500 /errors/server.html
 
 # ----------------------------------------------------------------------
 # Proper MIME type for all files
