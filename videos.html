@@ -202,7 +202,7 @@
             <h2>Video Gallery</h2>
             <div class="content">
             	
-            	<a class="various fancybox.iframe" href="http://www.youtube.com/v/XQu8TTBmGhA?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer"><img src="assets/videolb/thumbnails/0.png" alt="" /></a>
+            	<a class="fancybox-media" href="http://www.youtube.com/v/XQu8TTBmGhA?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer"><img src="assets/videolb/thumbnails/0.png" alt="" /></a>
 
 	            <div class="videogallery">
 
@@ -308,16 +308,12 @@
     <!-- FancyBox -->
       	<script type="text/javascript">
 		$(document).ready(function() {
-			$(".various").fancybox({
-				maxWidth	: 800,
-				maxHeight	: 600,
-				fitToView	: false,
-				width		: '70%',
-				height		: '70%',
-				autoSize	: false,
-				closeClick	: false,
-				openEffect	: 'none',
-				closeEffect	: 'none'
+			$('.fancybox-media').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+				helpers : {
+					media : {}
+				}
 			});
 		});
       	</script>	
