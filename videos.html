@@ -202,23 +202,7 @@
             <h2>Video Gallery</h2>
             <div class="content">
             	
-            	<a id="inline" href="#VideoTrailer"><img src="assets/videolb/thumbnails/0.png" alt="" /></a>
-            	<div id="VideoTrailer">
-            		<object width="425" height="344">
-            			<param name="trailer" value="link here"></param>
-            			<param name="allowFullScreen" value="true"></param>
-            			<param name="allowscriptaccess" value="always"></param>
-            				<embed
-            				 src="http://www.youtube.com/v/XQu8TTBmGhA?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer"
-            				 type="application/x-shockwave-flash"
-            				 allowscriptaccess="always"
-            				 allowfullscreen="true"
-            				 width="425"
-            				 height="344"
-            				 title="The Jack's Dogs Family">
-            				</embed>
-            		</object>
-            	</div>
+            	<a class="various fancybox.iframe" href="http://www.youtube.com/v/XQu8TTBmGhA?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer"><img src="assets/videolb/thumbnails/0.png" alt="" /></a>
 
 	            <div class="videogallery">
 
@@ -323,18 +307,19 @@
 
     <!-- FancyBox -->
       	<script type="text/javascript">
-      		$(document).ready(function() {
-      			
-      			$("#VideoTrailer").hide();
-      			
-      			$("#inline").fancybox({
-      				"hideOnContentClick": true,
-      				"frameWidth": 425,
-      				"frameHeight": 344,
-      				"zoomSpeedIn": 300,
-      				"zoomSpeedOut": 300
-      			});
-      		});
+		$(document).ready(function() {
+			$(".various").fancybox({
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: false,
+				width		: '70%',
+				height		: '70%',
+				autoSize	: false,
+				closeClick	: false,
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+		});
       	</script>	
 
     <!-- Google Analytics -->
