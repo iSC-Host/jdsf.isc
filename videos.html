@@ -67,15 +67,20 @@
 
 		    <!-- FancyBox -->
 		      	<script type="text/javascript">
-				$(document).ready(function() {
-				$('.fancybox-media').fancybox({
-					openEffect  : 'none',
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
 					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
 					helpers : {
-						media : {}
+						media : {},
+						buttons : {}
 					}
 				});
-			});
 		      	</script>	
 
     <!-- BOWER -->
